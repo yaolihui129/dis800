@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>左侧导航menu</title>
+<link href="__CSS__css.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__JS__sdmenu.js"></script>
+<script type="text/javascript">
+	// <![CDATA[
+	var myMenu;
+	window.onload = function() {
+		myMenu = new SDMenu("my_menu");
+		myMenu.init();
+	};
+	// ]]>
+</script>
+<style type=text/css>
+html{ SCROLLBAR-FACE-COLOR: #538ec6; SCROLLBAR-HIGHLIGHT-COLOR: #dce5f0; SCROLLBAR-SHADOW-COLOR: #2c6daa; SCROLLBAR-3DLIGHT-COLOR: #dce5f0; SCROLLBAR-ARROW-COLOR: #2c6daa;  SCROLLBAR-TRACK-COLOR: #dce5f0;  SCROLLBAR-DARKSHADOW-COLOR: #dce5f0; overflow-x:hidden;}
+body{overflow-x:hidden; background:url(images/main/leftbg.jpg) left top repeat-y #f2f0f5; width:194px;}
+</style>
+</head>
+<body onselectstart="return false;" ondragstart="return false;" oncontextmenu="return false;">
+<div id="left-top">
+	<div><img src="__IMAGES__main/member.gif" width="44" height="44" /></div>
+   <!--session判断-->
+  <if condition ="(session('?admin'))">
+
+    <if condition="$Think.session.admin_lim eq '1'">
+      <span>用户：<{$Think.session.admin}><br>角色：超级管理员</span>
+    <else />
+      <span>用户：<{$Think.session.admin}><br>角色：管理员</span>
+    </if>   
+  </if>
+</div>
+    <div style="float: left" id="my_menu" class="sdmenu">
+      <div class="collapsed">
+        <span>用户管理</span>
+        <a href="<{:U('User/user_info')}>" target="mainFrame" onFocus="this.blur()">添加用户</a>
+        <a href="<{:U('User/user_list')}>" target="mainFrame" onFocus="this.blur()">用户列表</a>
+         <if condition="$Think.session.admin_lim eq '1'">
+         <a href="<{:U('User/user_admin')}>" target="mainFrame" onFocus="this.blur()">添加管理员</a>
+         <else />
+       </if>
+        <a href="<{:U('User/user_administrate')}>" target="mainFrame" onFocus="this.blur()">管理管理员</a>
+      </div>
+      <div>
+        <span>商品类别管理</span>
+        <a href="<{:U('Goodsclass/goodsclass_info')}>" target="mainFrame" onFocus="this.blur()">添加顶级类</a>
+        <a href="<{:U('Goodsclass/goodsclass_list')}>" target="mainFrame" onFocus="this.blur()">查看商品类</a>
+      </div>
+      <div>
+        <span>商品品牌管理</span>
+        <a href="<{:U('Brand/brand_info')}>" target="mainFrame" onFocus="this.blur()">添加商品品牌</a>
+        <a href="<{:U('Brand/brand_list')}>" target="mainFrame" onFocus="this.blur()">查看商品品牌</a>
+      </div>
+      <div>
+        <span>商品管理</span>
+        <a href="<{:U('Goods/goods_info')}>" target="mainFrame" onFocus="this.blur()">添加商品</a>
+        <a href="<{:U('Goods/goods_list')}>" target="mainFrame" onFocus="this.blur()">查看商品</a>
+      </div>
+      <div>
+        <span>订单管理</span>
+        <a href="<{:U('Order/order_list')}>" target="mainFrame" onFocus="this.blur()">查看订单</a>
+      </div>
+      <div>
+      <span>客服消息</span>
+        <a href="<{:U('Chat/chat_list')}>" target="mainFrame" onFocus="this.blur()">客服消息</a>
+      </div>
+    
+       <div>
+        <span>信息管理</span>
+        <a href="<{:U('Information/information_info')}>" target="mainFrame" onFocus="this.blur()">信息添加</a>
+        <a href="<{:U('Information/information_list')}>" target="mainFrame" onFocus="this.blur()">信息列表</a>
+      </div>
+      <div>
+        <span>轮播图管理</span>
+        <a href="<{:U('Ringpic/ringpic_addinfo')}>" target="mainFrame" onFocus="this.blur()">添加图片</a>
+        <a href="<{:U('Ringpic/ringpic_list')}>" target="mainFrame" onFocus="this.blur()">轮播图列表</a>
+      </div>
+      <div>
+      <span>友情链接</span>
+        <a href="<{:U('Friendlink/friendlink_add')}>" target="mainFrame" onFocus="this.blur()">友情添加</a>
+        <a href="<{:U('Friendlink/friendlink_list')}>" target="mainFrame" onFocus="this.blur()">友情列表</a>
+        <a href="<{:U('Friendlink/friendlink_recyclelist')}>" target="mainFrame" onFocus="this.blur()">回收站列表</a>
+      </div>
+      <div>
+      <span>网站配置管理</span>
+        <a href="<{:U('Website/website_addinfor')}>" target="mainFrame" onFocus="this.blur()">配置方式添加</a>
+        <a href="<{:U('Website/website_list')}>" target="mainFrame" onFocus="this.blur()">配置方式列表</a> 
+         <a href="<{:U('Website/close')}>" target="mainFrame" onFocus="this.blur()">网站开关</a>
+      </div>
+      <div>
+      <span>娱乐管理</span>
+        <a href="main.html" target="mainFrame" onFocus="this.blur()">娱乐方式</a>
+      </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<link rel="shortcut icon" type="image/x-icon" href="__IMAGES__index/fav.png">
+		
+		<meta charset="utf-8">
+		<link href="__CSS__header.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="head">
+			<div id="header">
+				<a href="">团800旗下网站</a>
+				<!--锚点-->
+				<a name="righttop"></a>
+				<img src="__IMAGES__public/mobile_shake.gif" style="position:relative;top:3px" />
+				<a href="">手机版</a>&nbsp 
+				<a href="">QQ登录</a> |
+				<!--session判断-->
+				<if condition ="(session('?name'))">
+					<a href="<{:U('User/information')}>"><{$Think.session.name}></a>
+					<a href="<{:U('Login/clearsession')}>">退出</a>
+					<else />
+					<a href="<{:U('Login/login')}>">登录</a>
+				</if>
+				<!--session结束-->
+				<a href="<{:U('Login/register')}>">免费注册</a> | 
+				<a href="<{:U('User/order')}>">我的订单</a> |&nbsp
+				<div id="hearder_right">
+					<div class="cart_pic"></div>
+					<a href="<{:U('Cart/cart')}>">购物车</a> 
+					<span style="color:red"><{$Think.session.cart_num}></span> |
+					<a href="<{:U('Favorite/favorite')}>">我的收藏</a> | 
+					
+					<a href="">联系客服</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

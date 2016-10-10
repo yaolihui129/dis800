@@ -1,0 +1,57 @@
+*{
+	margin:0;
+	padding:0;
+}
+a{text-decoration:none;}
+
+.body_lfet li:hover{
+	background:#fff;
+	border-left:2px solid #808080;
+}
+#body_lfet_first:hover{
+	background:#EBEBEB;
+	border-left:none;
+}
+
+/*公共样式结束*/
+.body{
+	width:980px;
+	background:#FBFBFB;
+	margin:0 auto;
+	
+}
+.body_lfet{
+	width:140px;
+	height:593px;
+	background:#EBEBEB;
+	float:left;
+}
+/*右边菜单部分开始*/
+.body_lfet ul{
+	list-style:none;
+}
+.body_lfet ul li{
+	display:block;
+	float:left;
+	width:140px;
+	height:28px;
+	line-height:28px;
+	text-align:center;
+}
+.body_lfet ul li a{
+	font-size:12px;
+	color:#808080;
+}
+#body_lfet_first{
+	font-family:"微软雅黑";
+	color:#E02F2F;
+	font-size:14px;
+	text-decoration:none;
+	padding-top:10px;
+}
+#body_lfet_last{
+	font-size:12px;
+	padding-top:12px;
+	color:#808080;
+}
+/*右边菜单部分结束*/

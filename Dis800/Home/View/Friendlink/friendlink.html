@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<meta charset="uyf-8">
+		<title>friendLink</title>
+		<link rel="stylesheet" href="__CSS__friendLink.css" type="text/css">	
+	</head>
+	<body>
+		<include file="Public/header" />
+		<{:W('Public/search')}>
+		<!-- <include file="Public/leftstrip" /> -->
+		<!-- =====================友情链接提示开始===================== -->
+		<div id="tbody">
+			<div id="tbody_1">
+				友情链接
+			</div>
+			<!-- =============================== 友情链接其他网站地址开始  ================================ -->
+			<div id="tbody_2">
+				<!-- ================== B2C购物网址开始 ===================== -->
+
+				<span>B2C购物</span>
+				<hr style="width:940px;margin:0 auto;color:#E5E5E5">
+				<div id="tbody_2_1" style = "height:auto;overflow:hidden;margin-bottom:50px;">
+					<ul>
+						<foreach name = "friendLink1" item = "vo">
+					        <li>
+					        	<a href="http://<{$vo.url}>" title="折800特卖商城" target="_blank"><{$vo.describe}></a>
+					        </li>
+				    	</foreach>
+				    </ul>
+				</div>
+
+				<span>门户综合</span>
+				<hr style="width:940px;margin:0 auto;color:#E5E5E5">
+				<div id="tbody_2_1" style = "height:auto;overflow:hidden;margin-bottom:50px;">
+					<ul>
+						<foreach name = "friendLink2" item = "vo">
+					        <li>
+					        	<a href="http://<{$vo.url}>" title="折800特卖商城" target="_blank"><{$vo.describe}></a>
+					        </li>
+				    	</foreach>
+				    </ul>
+				</div>
+
+				<span>其他网站</span>
+				<hr style="width:940px;margin:0 auto;color:#E5E5E5">
+				<div id="tbody_2_1" style = "height:auto;overflow:hidden;margin-bottom:50px;">
+					<ul>
+						<foreach name = "friendLink3" item = "vo">
+					        <li>
+					        	<a href="http://<{$vo.url}>" title="折800特卖商城" target="_blank"><{$vo.describe}></a>
+					        </li>
+				    	</foreach>
+				    </ul>
+				</div>
+
+			
+				<!-- ===================== 友情链接申请协议 =============================== -->
+				<div id="links_foort">
+				    <b>友链申请</b>
+				    <p>
+				    衷心感谢您对本站的关注和支持，本站欢迎与各优秀网站交换友情链接，以达到互为推广，共同提高网站竞争力的目的。<br>
+				    友链申请步骤：(暂时只接受文字链接申请) <br>
+				    1.请先在贵站做好折800的文字链接：<br>
+				    <em></em>链接文字：折800<br>
+				    <em></em>链接地址： http://www.zhe800.com/   <br>
+				    2.做好链接后，将贵网站的网站名称、网站地址、联系方式等信息通过Email: sunlina&#64bd.tuan800.com 提交给我们！(本邮箱只负责友情链接相关事宜)<br>
+				    3.已经开通我站友情链接且内容键康，符合本站友情链接要求的网站，经折800管理员审核后，可以显示在此友情链接页面。
+				    </p>
+				</div>
+			</div>
+		</div>
+		<div style="clear:left"></div>
+
+		<include file="Public/blogroll" />
+		<div style="clear:left"></div>
+		<!-- <include file="Public/footer" /> -->
+		<{:W('Public/footer')}>
+	</body>
+</html>

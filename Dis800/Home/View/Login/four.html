@@ -1,0 +1,45 @@
+<extend name="pwd" />
+<block name="newpass">
+	<link href="__CSS__four.css" type="text/css" rel="stylesheet">
+	<script src="__JS__jquery-1.8.3.js"></script>
+	<div id="table">
+		<form action="<{:U('Login/pwd_four')}>" method="post">
+		<tr>
+			<td><span id="font">重置密码:</span><input type="password" name="pass" id="newpwd" placeholder="请输入新密码"></td>
+		</tr>
+		<hr id="line_one"><hr id="line_two"><hr id="line_three">
+		<p id="line_font">弱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		中 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		强</p>
+		<tr>
+			<td><span id="font">确认密码:</span><input type="password" name="renewpwd" id="renewpwd" placeholder="请确认密码"></td>
+		</tr><br><br>
+		<tr>
+			<!-- <td><a  id="img" href=""><img src="__IMAGES__login/2015-04-20_151711.png"></a></td> -->
+			<input type="submit" value="" style="background:url(__IMAGES__login/2015-04-20_151711.png);width:120px;height:38px;" >
+		</tr>
+	</form>
+	</div>
+		<script>
+
+		$(function(){
+			$("#newpwd").keyup(function(){
+				var length = $("#newpwd").val().length;
+			
+				if(length < 6){
+					$("#line_one").html("<hr style='background:red;height:5px;border:0px'>");
+				}else if(length > 6 && length < 12 ){
+					$("#line_two").html("<hr style='background:orange;height:5px;border:0px'>");
+				}else if(length > 12){
+					$("#line_three").html("<hr style='background:#6DD77A;height:5px;border:0px'>");
+				}
+					
+				
+			})
+			$(".box4,.box5,.box3,.box2,.box1,.box").css({"background":"#E9E9E9"});
+			$("#explain span").css({"color":"#999"})
+			$(".box4").css({"background":"#F8B986"})
+			$("#explain span").eq(3).css({"color":"#F8B986"})
+		});
+	</script>
+</block>

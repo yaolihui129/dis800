@@ -1,0 +1,25 @@
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="__CSS__footer.css">
+</head>
+<body>
+	<div class="foot">
+		<div class="footer">
+			<p><a>友情链接:</a>
+				<foreach name="data" item="va">
+					<a href=""> <{$va['describe']}> </a>
+				</foreach>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<{:U('Friendlink/friendlink')}>">更多>></a>
+			</p>
+			<br>
+				<span>京ICP证120075号 京ICP备10051110号-5 京公网安备11010502025623 Copyright©2011-2015 版权所有 <{$website['copyright']}></span><br>
+			<br>
+			<img src="__IMAGES__public/web_trust.png">&nbsp;
+			<img src="__IMAGES__public/cert.jpg" class="footer_img">
+		</div>
+	</div>
+
+</body>
+</html>

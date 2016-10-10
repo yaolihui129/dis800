@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<link rel="shortcut icon" type="image/x-icon" href="__IMAGES__index/fav.png">
+		<title>【折800官网】登录</title>
+		<meta charset="utf-8">
+		<link href="__CSS__login.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="top">
+			<a href="<{:U("Index/index")}>"><img id="imgs" src="__IMAGES__login/logo.png"></a>
+			<span id="span">
+				还没有帐号了？
+				<a href="<{:U("Login/register")}>">立即注册</a>
+			</span>
+		</div>
+		<div class="login">
+			<div class="left">
+				<img src="__IMAGES__login/130f4b3f21b106ab11a8c5b43eeb5cd4.jpg" />
+			</div>
+			<div class="right">
+				<form action="__APP__/Home/login/dologin" method="post">
+					<table class="table">
+						<tr>
+							<td><span id="lo">登录</span></td>
+						</tr>
+						<tr>
+							<td><img  id="user-img" src="__IMAGES__login/2015-04-20_105536.png"><input type="text"  name="user"placeholder="请输入登陆名" id="txt"></td>
+						</tr>
+						<tr>
+							<td><img id="pwd-img" src="__IMAGES__login/2015-04-20_105837.png"><input id="pwd" type="password" name="pass" placeholder="请输入密码" id="pwd"></td>
+						</tr>
+						<tr>
+							<td><input type="submit" style="background:url(__IMAGES__login/login_signin.png);width:125px;height:45px;" value=""></td>
+							<td><a href="<{:U('Login/pwd')}>">忘记密码？</a></td>
+						</tr>
+					</table>
+				</form>
+				<span id="line">---------------------------------------</span>
+				<p id="size">您还可以使用这些账号登陆:</p>
+				<table>
+					<tr>
+						<td><a href=""><img src="__IMAGES__login/2015-04-19_115530.png"></a></td>
+						<td><a href=""><img src="__IMAGES__login/2015-04-19_115556.png"></a></td>
+					</tr>
+				</table>
+			</div>
+		
+		</div>
+		<div class="bottom">
+			<span class="bo">
+				<a href="">京ICP证120075号</a>
+				京ICP备10051110号-5 京公网安备11010502025623 Copyright©2011-2015 版权所有 ZHE800.COM 
+			</span><br>
+			<div class="bottom-img">
+				<a href=""><img  id="img1"src="__IMAGES__login/web_trust.png"></a>
+				<a href=""><img id="img1"src="__IMAGES__login/cert.png"></a>
+			</div>
+		</div>
+	</body>
+</html>

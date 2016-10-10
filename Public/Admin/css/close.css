@@ -1,0 +1,22 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	overflow-x:hidden; 
+	background:#f2f0f5;
+	 padding:15px 0px 10px 5px;
+	}
+#close_box{
+	width:300px;
+	height:175px;
+	margin: 0 auto;
+	background:url(../images/main/close.png);
+}
+#close_box1{
+	width:300px;
+	height:175px;
+	margin: 0 auto;
+	background:url(../images/main/close.png) 0px 174px;
+	display: none;
+}

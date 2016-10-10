@@ -1,0 +1,47 @@
+#table{
+	margin-left:150px;
+}
+#font{
+	font-size:14px;
+	color:#757575;
+}
+
+#newpwd{
+	width:250px;
+	height:36px;
+}
+#renewpwd{
+	width:250px;
+	height:36px;
+}
+#line_one{
+	margin-left:63px;
+	width:80px;
+	height:5px;
+	background:#E9E9E9;
+	border:0px;
+}
+#line_two{
+	margin-left:148px;
+	margin-top:-13px;
+	width:80px;
+	height:5px;
+	background:#E9E9E9;
+	border:0px;
+}
+#line_three{
+	margin-left:234px;
+	margin-top:-13px;
+	width:80px;
+	height:5px;
+	background:#E9E9E9;
+	border:0px;
+}
+#line_font{
+	color:#333333;
+	font-size:12px;
+	margin-left:100px;
+}
+#img{
+	margin-left:65px;
+}

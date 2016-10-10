@@ -1,0 +1,122 @@
+
+
+.body_address{
+	width:800px;
+	height:482px;
+	color:#666666;
+	font-size:12px;
+	float:left;
+	margin-left:30px;
+	margin-top:50px;
+}
+.body_address input{
+	height:26px;
+}
+.body_address_user{
+	width:788px;
+	height:33px;
+	margin-left:12px;
+	float:left;
+}
+.body_address_user span{
+	color:#FA3686;
+}
+.body_address_user_address{
+	width:265px;
+	height:26px;
+}
+
+
+.body_address_phone{
+	width:788px;
+	height:33px;
+	margin-left:12px;
+	margin-top:3px;
+	float:left;
+}
+.body_address_phone span{
+	color:#FA3686;
+}
+.body_address_phone_address{
+	width:265px;
+}
+.body_address_user_email{
+	width:265px;
+}
+.body_address_phone_number{
+	width:42px;
+}
+.body_address_phone_number0{
+	width:112px;
+}
+.body_address_phone_number1{
+	width:42px;
+}
+.body_address_email{
+	width:788px;
+	height:33px;
+	margin-top:3px;
+	margin-left:12px;
+	float:left;
+}
+.body_address_email span{
+	color:#FA3686;
+}
+.body_address_site{
+	width:800px;
+	height:33px;
+	margin-top:3px;
+	float:left;
+}
+.body_address_site span{
+	color:#FA3686;
+	float:left;
+}
+.body_address_site pre{
+	float:left;
+}
+
+.body_address_site_code{
+	width:112px;
+}
+.body_address_minute{
+	width:788px;
+	height:33px;
+	margin-top:3px;
+	float:left;
+}
+.body_address_minute span{
+	color:#FA3686;
+}
+.body_address_minute input{
+	width:553px;
+}
+.body_address_submit{
+	width:788px;
+	height:50px;
+	margin-top:10px;
+	float:left;
+}
+.body_address_addsub{
+	display:block;
+	float:left;
+	background:#D60211;
+	border:0px solid #D60211;
+	color:#fff;
+	width:112px;
+	height:33px;
+	margin-top:15px;
+	margin-left:80px;
+	border-radius:2px;
+}
+.body_address_hint{
+	float:left;
+	text-align:center;
+	margin-left:80px;
+	color:#D9534F;
+	display:none;
+}
+
+.body_address_error{
+	border:1px solid #D9534F;
+}

@@ -1,0 +1,90 @@
+<html>
+<head>
+
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="__CSS__goodslist.css">
+	<script type="text/javascript" src="__JS__jquery-1.8.3.js"></script>
+</head>
+<body>
+	<include file="Public/header" />
+	<{:W('Public/search')}>
+	<div id="goodslist_box">
+		<div id="goodslist_main">
+			<if condition="($goods[0] eq '')">
+				<div id="search_no">
+					<img src="__IMAGES__goods/T1HcvHXd4nXXb6ROYh-48-48.gif" style="position:relative;left:450px;top:200px">
+				</div>
+				<div id="search_no2" style="display:none">
+					<div>
+						<img src="__IMAGES__goods/J33E6JNDILKPH_KT$B5Z([E.png" style="position:relative;left:250px;top:180px"></div>
+						<p style="padding-left:360px;padding-top:130px">没有找到与"<span style="color:red"><{$classname}></span>"相关的宝贝</p>
+					</div>
+					<script type="text/javascript">
+						$(function(){
+							setTimeout(function(){
+								$("#search_no").css({"display":"none"});
+								$("#search_no2").css({"display":"block"});
+							},2000);
+						});
+					</script>
+			<else />
+			<p><span style="color:red;font-size:16px;font-weight: bold;"><{$classname}></span> | 共有3604件优质商品，每天9点更新 排序：最新最热 <a href="<{:U('Goods/goodslist',array("id"=>8,"name"=>$classname,"sta"=>1,"time"=>1))}>">时间</a>　<a href="<{:U('Goods/goodslist',array("id"=>8,"name"=>$classname,"sta"=>1,"price"=>1))}>">价格</a></p>
+			<hr style="color:#eef;width:960px;margin:0 auto">
+			<p><b>全部(3604)</b> 
+				<foreach name="goods" item="vo">
+				<a href=""><{$vo['name']}>(<{$vo['number']}>)</a> 
+			</foreach>
+			</p>
+			<!-- 列表图片 -->
+			<div id="goodslist_main_pic">
+				<!-- 列表图 -->
+				<foreach name="goods" item="vo">
+					<div id="goodslist_pic">
+						<img src="__IMAGES__goods/xinpin.png" id="goodslist_goodpic_new">
+
+						<div class="goodslist_goodpic">
+							<a href="<{:U('Goods/goodinfo',array("id"=>$vo['id']))}>"><img src="__PUBLIC__<{$vo['pic']}>" id="goodslist_goodpic_pic"></a>
+						</div>
+						<div class="goodslist_good">
+							<p><a href="<{:U('Goods/goodinfo',array("id"=>$vo['id']))}>"><{$vo['name']}></a></p>
+							<span class="good_pric">¥</span> 
+								<span class="good_price"><{$vo['minprice']}></span>
+								<if condition="($vo['minprice'] neq $vo['maxprice'])">
+								<span class="good_price">~</span>
+								<span class="good_price"><{$vo['maxprice']}></span>
+							</if>
+							<div id="good_post"></div>
+							<div id="good_tpic"></div><span class="good_tfont">　　天猫<br>库存<{$vo['number']}>（已售<{$vo['soldnum']}>件）</span>
+						</div>
+					</div>
+			</foreach>
+			</if>
+			
+
+
+			</div>
+		</div>
+	</div>
+	<!-- 左边栏目 -->
+		<div id="leftstrip_mune"><include file="Public/leftstrip" /></div>
+	<div style="clear:left"></div>
+	<include file="Public/rightstrip" />
+	<include file="Public/blogroll" />
+	<div style="clear:left"></div>
+	<{:W('Public/footer')}>
+	<!-- <include file="Public/footer" /> -->
+</body>
+<script type="text/javascript">
+$(function(){
+	setInterval(function(){
+		if($(document).scrollTop()>=110){
+			$("#leftstrip_mune").css({"display":"block"})
+		}else{
+			$("#leftstrip_mune").css({"display":"none"})
+		}
+	},100)
+	
+
+
+});</script>
+</html>

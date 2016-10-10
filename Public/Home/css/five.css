@@ -1,0 +1,19 @@
+.table{
+	margin-left:130px;
+}
+#line{
+	border-top:1px dotted #D2D2D2;
+	width:930px;
+	margin:0 auto;
+	height:1px;
+	display:block;
+}
+.table_two{
+	margin-left:130px;
+	margin-top:40px;
+}
+#font{
+	margin-left:5px;
+	color:#333333;
+	font-size:14px;
+}

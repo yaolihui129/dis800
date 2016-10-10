@@ -1,0 +1,94 @@
+<html>
+<head>
+	<title></title>
+	<link href="__CSS__siteinsert.css" rel="stylesheet" charset="utf-8">
+	<script src="__JS__jquery-1.8.3.js"></script>
+	<script src="__JS__siteinsert.js" rel="stylesheet" type="text/javascript"></script>
+</head>
+<body>
+<div class="big_pic">
+	<form action="<{:U('User/smailsiteinsert')}>" method="post">
+	
+	<div class="insertbody">
+		<!--头-->
+		<div class="insertbody_top">
+			<div class="insertbody_top_text">
+				使用新地址
+			</div>
+		</div>
+		<!--头结束-->
+
+		<!--收货人-->
+		<div class="insertbody_user">
+			<span>*</span>收货人&nbsp:<input type="text" name="name" value="" class="insertbody_from_user">
+		</div>
+
+		<input type="hidden" name="addid" class="insertbody_from_addid">
+		<!--收货人结束-->
+
+		<!--手机-->
+		<div class="insertbody_phone">
+			&nbsp&nbsp&nbsp&nbsp<span>*</span>手机&nbsp:<input type="text" name="phone" value="" class="insertbody_from_phone">
+		</div>
+		<!--手机结束-->
+
+		<!--邮箱-->
+		<div class="insertbody_email">
+			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp邮箱&nbsp:<input type="email" name="email" value="" class="insertbody_from_email">
+		</div>
+		<!--邮箱结束-->
+		<!--虚线-->
+		<div class="insertbody_from_line"> 
+		</div>
+		<!--虚线结束-->
+		<!--所在地址-->
+		<div class="insertbody_add">
+			<div class="insertbody_add_size">&nbsp<span>*</span>所在地址:</div>
+			<include file="Public/city_relevance" />
+			<div class="insertbody_add_postcode">
+				邮编：<input type="text" name="insertbody_postcode" value="" class="insertbody_from_postcode">
+			</div>
+		</div>
+		<!--所在地址-->	
+
+
+
+		<!--详细地址-->
+		<div class="insertbody_smailadd">
+			&nbsp<span>*</span>详细地址&nbsp:<input type="text" name="samiladd" value="" class="insertbody_from_smailadd">
+		</div>
+		<!--详细地址-->
+
+
+
+		<!--设置默认地址-->
+		 <div class="insertbody_selected">
+		 	<input type="checkbox" name="addsleected" value="1" class="insertbody_form_selected">
+		 	<div class="insertbody_selected_font"><span>设为默认地址</span>(设置为默认地址后，系统将在下次购买时自动选中该收货地址)</div>
+		 </div>
+		<!--设置默认地址结束-->	
+
+		<!--提示-->
+		<div class="insertbody_caution">
+			请填写收货人
+		</div>
+		<!--提示结束-->
+
+		<div class="insertbody_from_xline">
+		</div>
+		<!--取消-->
+		<div class="insertbody_cancel">
+			<a href="<{:U('User/siteout')}>">取消</a>
+		</div>
+		<!--取消结束-->
+
+		<!--确认-->
+		<div class="insertbody_sub">
+		<input type="submit" name="sub" value="确认" class="insertbody_sub_from">
+		</div>
+		 <!--确认结束-->
+	</div>
+	</form>
+</div>
+</body>
+</html>

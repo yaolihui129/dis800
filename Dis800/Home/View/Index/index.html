@@ -1,0 +1,157 @@
+<html>
+<head>
+	<link rel="shortcut icon" type="image/x-icon" href="__IMAGES__index/fav.png">
+	<title><{$website['title']}></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="__CSS__index.css">
+	<script type="text/javascript" src="__JS__jquery-1.8.3.js"></script>
+	<script type="text/javascript" src="__JS__index.js"></script>
+</head>
+<body>
+	<include file="Public/header" />
+	<{:W("Public/search")}>
+	<!-- body -->
+	<div id="box">
+		<!-- 头部 -->
+		<div id="main">
+			<!-- nav -->
+			<div id="main_left">
+				<ul>
+
+					<foreach name="er" item="vo">
+						<foreach name="vo['second']" item="v">
+							
+							<li><div class="main_left_pic_<{$a++}>"></div>
+								<a href="<{:U('Goods/goodslist',array("id"=>$v['id'],"name"=>$v['name'],"sta"=>2))}>">
+									<{$v['name']}></a> > 
+								<foreach name="v['third']" item="vi">
+									<a href="<{:U('Goods/goodslist',array("id"=>$vi['id'],"name"=>$vi['name'],"sta"=>3))}>">
+										<{$vi['name']}></a>
+								</foreach>
+							</li>
+						</foreach>
+					</foreach>
+			
+					
+				</ul>	
+				<li id="li_aa"><a href="" id="li_a">今日上新</a><a href="" id="li_a">值得买</a><a href="" id="li_a">值得逛</a></li>
+			</div>
+			<!-- 轮播图 -->
+			<div id="main_lunbotu">
+					<img src="__PUBLIC__<{$data1['pic']}>" id="main_lunbotupic" style="width:807px;height:235px;">
+				<div id="4" class="main_lunbotupic_num"></div>
+				<div id="3" class="main_lunbotupic_num"></div>
+				<div id="2" class="main_lunbotupic_num"></div>
+				<div id="1" class="main_lunbotupic_num"></div>
+			</div>
+			<div id = "hiddenInput">
+				<foreach name ="da" item = "tmp">
+					<input type="hidden" name="<{$tmp['pic']}>" wolegequ = "<{$tmp['a']}>">
+				</foreach>
+			</div>
+			<script>
+				$(function(){
+					var i=0;
+					var time=setInterval(function(){
+						i++;
+						if(i>4){
+							i=1;
+						}
+						$(".main_lunbotupic_num").css({background:"white"});
+						$("#"+i).css({background:"red"});
+						$("#main_lunbotupic").attr('src','__PUBLIC__'+$('input[wolegequ="'+i+'"]').attr('name'));
+					},3000);
+				});
+			</script>
+			<!-- 小图 -->
+			<div id="main_smallpic">
+				<img src="__IMAGES__index/small_1.jpg" class="main_smallpic">
+				<img src="__IMAGES__index/small_2.jpg" class="main_smallpic">
+				<img src="__IMAGES__index/small_3.jpg" class="main_smallpic">
+			</div>
+		</div>
+		<!-- 内容 -->
+		<div id="content">
+			<p> 热销推荐 <span>特色专题 | 人气爆款 | 每日更新 </span></p>
+			<div class="content_pic">
+				<img src="__IMAGES__index/content_1.jpg" class="content_pic_m">
+				<img src="__IMAGES__index/content_5.jpg" class="content_pic_m">
+				<img src="__IMAGES__index/content_6.jpg" class="content_pic_m">
+				<img src="__IMAGES__index/content_2.jpg" class="content_pic_s">
+				<img src="__IMAGES__index/content_3.jpg" class="content_pic_s">
+				<img src="__IMAGES__index/content_6.jpg" class="content_pic_m">
+				<img src="__IMAGES__index/content_4.jpg" class="content_pic_s">
+				<img src="__IMAGES__index/content_7.jpg" class="content_pic_s">
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				$(".content_pic_m,.content_pic_s").mouseover(function(){
+					$(this).css({opacity:0.8});
+					setTimeout(function(){
+						$(".content_pic_m,.content_pic_s").css({opacity:1});
+					},200);
+				});
+
+			});
+		</script>
+
+		<!-- 今日已更新 -->
+		<div id="new">
+			<p>今日已更新 <span>756款 > </span> </p>
+			<div class="newpic">
+				<div class="newpic">
+				<foreach name="good" item="vo">
+					<div class="newpic_goods">
+						<a href="<{:U('Goods/goodinfo',array("id"=>$vo['id']))}>"><img src="__PUBLIC__<{$vo['pic']}>" class="newpic_goods_1"></a>
+						<span><br><br>
+							<a href="<{:U('Goods/goodinfo',array("id"=>$vo['id']))}>" id="newpic_goods_a1">每天1款，限量100份</a><br><br>
+							<a href="<{:U('Goods/goodinfo',array("id"=>$vo['id']))}>" id="newpic_goods_a2"><{$vo['name']}></a>秒杀
+							<a href="<{:U('Goods/goodinfo',array("id"=>$vo['id']))}>" id="newpic_goods_a3">去看看</a>
+						</span>
+					</div>
+				</foreach>
+
+<!-- 重复的商品 -->
+			<div class="newpic_goods">
+					<img src="__IMAGES__index/newpic_goods.jpg" class="newpic_goods_1">
+					<span><br><br>
+						<a href="" id="newpic_goods_a1">每天1款，限量100份</a><br><br>
+						<a href="" id="newpic_goods_a2">9.9元春茶秒杀</a>
+						<a href="" id="newpic_goods_a3">去看看</a>
+					</span>
+				</div>
+			
+			
+			
+			
+
+
+
+			</div>
+		</div>
+
+
+
+
+	</div>
+	<!-- 左边栏目 -->
+		<div id="leftstrip_mune"><include file="Public/leftstrip" /></div>
+		<!-- right边栏目 -->
+		<include file="Public/rightstrip" />
+		<!--抽奖猴子-->
+		<include file="Public/raffle" />
+		<!--抽奖猴子结束-->
+
+		<!--小栏目登录-->
+		<include file="LOGIN/smalllogin" />
+		<!--小栏目登录结束-->
+
+	<div style="clear:left"></div>
+	<include file="Public/blogroll" />
+	<div style="clear:left"></div>
+	<include file="Public/footer" />
+
+
+</body>
+</html>

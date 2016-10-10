@@ -1,0 +1,73 @@
+*{
+		margin:0px;
+		padding:0px;
+	}
+	#tbody{
+		width:980px;
+		height:1233px;
+		margin:0 auto;
+	}
+	#tbody_1{
+		margin:0 auto;
+		font-family:微软雅黑;
+		font-size:18px;
+		width:940px;
+		padding-top:30px;
+		height:30px;
+		line-height:30px;
+		padding-bottom:15px;
+	}
+	#tbody_2{
+	width:940px;
+	height:848px;
+	margin:0 auto;
+	margin-bottom: 10px;
+	}
+	#tbody_2 span{
+		display:block;
+		width:64px;
+		height:30px;
+	}
+	#tbody_2_1{
+		width:940px;
+		height:335px;
+	}
+	#tbody_2 li{
+	    float: left;
+	    height: 35px;
+	    line-height: 35px;
+	    overflow: hidden;
+	    font-family:微软雅黑;
+		font-size:12px;
+	    padding-left: 10px;
+	    width: 124px;
+	    background: url("http://s0.tuanimg.com/2012/static_deploy/images/footer_list1.png") no-repeat scroll 0px 17px transparent;
+	    border-bottom:1px dashed #E5E5E5;
+	}
+
+	#tbody_2 a{
+	text-decoration:none;	
+	}
+	#tbody_2 a:hover{
+	text-decoration:underline;
+	color:#666666;	
+	}
+	#tbody_2_2{
+		width:940px;
+		height:195px;
+	}
+	#tbody_2_3{
+		width:940px;
+		height:195px;
+	}
+	#links_foort{
+	    width: 920px;
+		padding: 10px;
+		background: none repeat scroll 0% 0% #F7F7F7;
+		 	margin: 10px auto 20px;
+		text-align: left;
+		line-height: 30px;
+			font-size: 12px;
+		color: #333;
+	}
+	

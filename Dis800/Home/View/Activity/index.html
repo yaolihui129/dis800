@@ -1,0 +1,74 @@
+<extend name="ACTIVITY:draw" />
+<block name="draw">
+<head>
+<style type="text/css">
+/* 页面 css */
+*{margin:0;padding:0;list-style-type:none;}
+h1{width:900px;margin:40px auto;font:32px "Microsoft Yahei";text-align:center;}
+
+/* demo css */
+.choujiang{position:relative;width:780px;height:390px;margin:40px auto 0 auto;padding:20px;background:url(__IMAGES__/draw/ly-plate-c.gif) 20px 20px no-repeat;position:absolute;z-index:20;top:-10px;left:250px;}
+
+.plate{position:relative;float:left;width:390px;height:390px;background-image:url(__IMAGES__/draw/lyplate.png);}
+.prize{float:right;width:360px;height:390px;font:14px/1.5 "Microsoft Yahei";position:absolute;top:40px;left:420px;}
+.prize h4{margin:80px 0 20px;padding:10px;background-color:#eee;}
+.prize ul{list-style-type:none;}
+.prize li{margin:10px;}
+#plateBtn{position:absolute;left:88px;top:88px;width:214px;height:214px;background-image:url(__IMAGES__/draw/rotate-static.png);text-indent:-9999px;overflow:hidden;}
+#result{display:none;position:absolute;left:65px;top:155px;width:300px;height:120px;background-color:rgba(0,0,0,0.75);filter:alpha(opacity=90);}
+#resultTxt{padding:45px 15px 0;font:16px "Microsoft Yahei";color:#fff;text-align:center;}
+#resultTxt em{color:#ffea76;font-style:normal;}
+#resultBtn{position:absolute;right:5px;top:5px;width:25px;height:25px;text-indent:-100px;background-image:url(__IMAGES__/draw/close.png);overflow:hidden;}
+.choujiang_number{
+	color:#C7000B;
+	font-family:"微软雅黑";	
+	font-weight:bold;
+	font-size:22px;
+	position:absolute;
+	z-index:10;
+	left:-80px;
+}
+.choujiang_size{
+	font-size:30px;
+	margin-left:10px;
+	font-family:"Arial";
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="choujiang">
+	<!--抽奖次数-->
+	<div class="choujiang_number">
+
+		剩余次数<span class="choujiang_size"><{$num}></span>
+	</div>
+	<div class="plate">
+		<a id="plateBtn" href="javascript:" title="开始抽奖" class="<{$Think.session.id}>">开始抽奖</a>
+	</div>
+
+	<div class="prize">
+		<h4>奖品设置</h4>
+		<ul>
+			<li><strong>一等奖：</strong>莱特超跑（1辆）</li>
+			<li><strong>二等奖：</strong>兰博基尼 (1辆)</li>
+			<li><strong>三等奖：</strong>iphone6 plus</li>
+			<li><strong>四等奖：</strong>iphone watch</li>
+			<li><strong>参与奖：</strong>谢谢！购买</li>
+		</ul>
+	</div>
+
+	<div id="result">
+		<p id="resultTxt"></p>
+		<a id="resultBtn" href="javascript:" title="关闭">关闭</a>
+	</div>
+	
+</div>
+
+<script type="text/javascript" src="__JS__/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="__JS__/jquery.rotate.min.js"></script>
+<script type="text/javascript" src="__JS__/draw.js"></script>
+</body>
+</block>

@@ -1,0 +1,53 @@
+<extend name="pwd" />
+<block name="newpass">
+	<link href="__CSS__three.css" type="text/css" rel="stylesheet">
+	
+<!-- 		<table class="table">
+			<tr>
+				<td><span id="font">接收找回密码邮件：<br><br></span></td>
+			</tr>
+			<tr>
+				<td>
+					<p id="p">我们已将“[折800通行证]找回密码”邮件发送到您的邮箱<br>
+					<span id="email">521***@***com</span> 中，请在30分钟内收信重置密码。</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#"><p id="link">立即登录邮箱验证</p></a>
+				</td>
+			</tr>
+		</table>
+		<span id="line"></span>
+		<table class="table_two">
+			<tr>
+				<td>
+					<p id="link_two">还没有收到验证？</p>
+					<p id="link_three">尝试到广告、垃圾邮件目录里找找看，或者  <a href=""><span id="send">重新发送</span></a>  找回密码邮件 </p>
+				</td>
+			</tr>
+		</table> -->
+		<form action="<{:U('Login/pwd_three')}>" method="post">
+	<div style="margin-left:300px;margin-top:100px;">
+			请输入密保问题信息:<input type="text" name="issue" id="issue" / > 
+			<input type="submit" name="" class="sub" value="提交">
+	</div>
+</form>
+	<script>
+		$(function(){
+			
+			$(".box4,.box5,.box3,.box2,.box1,.box").css({"background":"#E9E9E9"});
+			$("#explain span").css({"color":"#999"})
+			$(".box3").css({"background":"#F8B986"})
+			$("#explain span").eq(2).css({"color":"#F8B986"})
+
+			$(".sub").click(function(){
+				if($("#issue").val()==''){
+					alert("请填写正确信息");
+					return false;
+				}
+			})
+			
+		});
+	</script>
+</block>

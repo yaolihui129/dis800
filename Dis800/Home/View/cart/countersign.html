@@ -1,0 +1,326 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>【折800官网】确认订单</title>
+		<link href="__CSS__countersign.css" rel="stylesheet" type="text/css">
+		<script src="__JS__/jquery-1.8.3.js" type="text/javascript"></script>
+		<script src="__JS__countersig.js"></script>
+	</head>
+	<body>
+		<include file="Public/header" />
+			<!-- =====================================     结算标题开始     =================================== -->
+		
+		<div id="title">
+			<div id="title_1">
+				<a href=""><img src="__IMAGES__cart/logo_min_2014.png"></a>
+			</div>
+			<div id="title_2">
+				
+			</div>
+			
+		
+		
+		</div>
+			<!-- =====================================     结算标题结束     =================================== -->
+			
+			<!-- =====================================     结算信息框开始    =================================== -->
+		<div id="countersign">
+			<!--判断是否有数据-->
+		<if condition="$addresslist eq ''">
+		<link href="__CSS__cartsite.css" rel="stylesheet" type="text/css">
+		<script src="__JS__jquery-1.8.3.js"></script>
+		<script src="__JS__site.js" rel="stylesheet" type="text/javascript"></script>
+					<!--右边地址填写部分-->
+			<form action="__CONTROLLER__/site_inert" method="post" onsubmit="return judge()">
+
+			<div class="body_address">
+				<div class="body_address_user">
+					<input type="hidden" name="uid" value="<{$Think.session.id}>">
+					<span>*&nbsp</span>收货人：&nbsp<input type="text" name="name" value="" class="body_address_user_address">
+				</div>
+
+				<div class="body_address_phone">
+					<span>*&nbsp</span>&nbsp&nbsp手机：&nbsp<input type="text" name="tel" value="" class="body_address_phone_address">
+				</div>
+
+				<div class="body_address_email">
+					&nbsp&nbsp&nbsp&nbsp邮箱：&nbsp<input type="email" name="email" value="" class="body_address_user_email">
+				</div>
+
+				<div class="body_address_site">
+					<span>*&nbsp</span><pre>所在地区：</pre>
+
+					<include file="PUBLIC/city_relevance" />
+
+					<span></span>邮编：<input type="text" name="postcode" value="" class="body_address_site_code">
+				</div>
+
+				<div class="body_address_minute">
+					<span>*&nbsp</span>详细地址：
+					<input type="text" name="add" value="" class="body_address_user_minute">
+				</div>
+
+				<!--警告栏-->
+				<div class="body_address_hint"></div>
+				<!--警告兰结束-->
+
+				<div class="body_address_submit">
+					<input type="submit" name="addsub" value="保存收货信息" class="body_address_addsub">
+				</div>
+			</div>
+			<!--右边地址填写部分-->
+
+			</form>	
+
+			 <else />
+
+
+			
+<div id="countersign">
+			<!-- 未填写收货地址状态 -->
+			 <span style="font-family:微软雅黑;font-size:16px;float:left;margin-left:10px">确认收货信息</span>
+			<table border="0" class="countersign_address">
+				<foreach name="addresslist" item="addresslists">
+				<tr>
+					<td class="<{$addresslists['defaultadd']? 'countersign_address_td':'countersign_address_td_add_error'}>">
+						<div class="countersign_address_td_add">
+						 <div class="<{$addresslists['defaultadd']? 'countersign_address_td_add_pic':'countersign_address_td_add_pic_error'}>">
+						 </div>	
+						 寄送至
+						 	<span class="<{$addresslists['id']}>"></span>
+						</div>
+						 <div class="countersign_address_td_addsize">
+						 	 <{$addresslists['address']}> ( <{$addresslists['name']}> 收) <{$addresslists['tel']}>
+						 </div>
+						<div class="countersign_address_td_add_size">
+							<a href='<{:U("Cart/cartupdataa")}>?id=<{$addresslists["id"]}>'><{$addresslists['defaultadd']? '[默认地址]' : '[设为默认地址]'}></a> <a href="#" class="savesite_information_update" onclick="return false" id='<{$addresslists["id"]}>'>修改</a> <a href='<{:U("Cart/cartadddel")}>?id=<{$addresslists["id"]}>'>删除</a>
+						</div>
+					</td>
+				</tr>
+				</foreach>
+				<tr>
+					<td class="countersign_address_tdd">
+						<div class="countersign_address_tdd_div">
+							<a href="<{:U('Cart/cartinsert')}>">&nbsp<span>+</span>&nbsp使用新地址</a>
+						</div>
+					</td>
+				</tr>
+
+			</table>
+		</if>	
+			<!--结束 -->
+
+			<!-- =====================================     结算信息框结束   =================================== -->
+	
+			
+			
+			<!-- =====================================     快捷支付开始    =================================== -->
+		<div id="money">
+
+			<div style="clear:both"></div>
+				<!-- =====================================     结算支付方式结束    =================================== -->
+				<!-- =====================================     结算·支付开始   =================================== -->
+
+			<div id="money_pay">
+				<div></div>
+				<div style="position:absolute;top:450px"><b>网银支付</b></div>
+				<div class="money_pay_img"><input type="radio" name="ra" value="0"><img src="__IMAGES__cart/icbc.png" class="money_pay_imga"></div>
+				<div class="money_pay_img"><input type="radio" name="ra" value="1"><img src="__IMAGES__cart/ccb.png" class="money_pay_imga"></div>
+				<div class="money_pay_img"><input type="radio" name="ra" value="2"><img src="__IMAGES__cart/boc.png" class="money_pay_imga"></div>
+				<div class="money_pay_img"><input type="radio" name="ra" value="3"><img src="__IMAGES__cart/abc.png" class="money_pay_imga"></div>
+				<div class="money_pay_img"><input type="radio" name="ra" value="4"><img src="__IMAGES__cart/comm.png" class="money_pay_imga"></div>
+				<div class="money_pay_img"><input type="radio" name="ra" value="5"><img src="__IMAGES__cart/cmb.png" class="money_pay_imga"></div>
+				<div class="money_pay_img"><input type="radio" name="ra" value="6"><img src="__IMAGES__cart/citic.png" class="money_pay_imga"></div>
+				<div class="money_pay_img"><input type="radio" name="ra" value="7"><img src="__IMAGES__cart/spdb.png" class="money_pay_imga"></div>
+				<div class="money_pay_img"><input type="radio" name="ra" value="8"><img src="__IMAGES__cart/cib.png" class="money_pay_imga"></div>
+				<div class="money_pay_img"><input type="radio" name="ra" value="9"><img src="__IMAGES__cart/cmbc.png" class="money_pay_imga"></div>
+				
+				
+			</div>	
+				<!-- =====================================     结算网银支付开始   =================================== -->
+			
+		</div>
+			<!-- =====================================     快捷支付结束    =================================== -->
+			
+			
+			<!-- =====================================     订单信息开始    =================================== -->
+			<div id="affirm"><b>确认订单信息</b></div>
+
+			<div id="info">
+				<table border="0" width="980px">
+					<tr>
+						<th>宝贝</th>
+						<th>规格</th>
+						<th>单价(元)</th>
+						<th>数量</th>
+						<th>小计(元)</th>
+						<th>运费(元)</th>
+					</tr>
+					<tr>
+						<td colspan="6">
+							<div id="info_object1">
+								伊诺小镇百顺婴童童装特卖店 <img src="__IMAGES__cart/pa.gif">
+							</div>
+							<span id="info_object2">
+								
+							</span>
+							
+						</td>
+					</tr>
+
+
+					<foreach name="cartlists" item="cartlistes">
+					<tr>
+						<td id="tdinfo">
+							<div id="tdinfo_pic"> 
+								<img width:"80px" height="80px" src="<{$cartlistes['cartpic']}>">
+							</div>
+							<div id="tdinfo_write">
+								<a href="" style="font-size:12px;"><{$cartlistes['gname']}></a>
+							</div>
+							
+						</td>
+
+					
+						<td>
+							&nbsp;&nbsp;&nbsp;&nbsp;颜色：<{$cartlistes['gcolor']}>
+							<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;尺寸：<{$cartlistes['gsize']}>
+						</td>
+						<td>
+							&nbsp;&nbsp;<b style="font-family: 微软雅黑;">￥<span class="carttotalprice" id='<{$cartnums}>'><{$cartlistes['totalprice']}></span></b>
+						</td>
+						<td >
+							&nbsp;&nbsp;<span class="cartamountes"><{$cartlistes['goodnumber']}></span>
+						</td>
+						<td>
+							&nbsp;&nbsp;&nbsp;&nbsp;<b  class="carttotalprices" style="font-family: 微软雅黑;"><{$cartlistes['totalprice']*$cartlistes['goodnumber']}></b>
+						</td>
+						<td>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;包邮
+						</td>
+					</tr>
+
+					<span class="cartarray" id="<{$cartlistes['gid']}>"></span>
+					</foreach>
+				</table>
+					
+				</div>
+				<table border="0" style="margin:0 auto;width:980px;background:#FFF7F7;">
+					<tr>
+						<td>
+							<span style="color:#7A798E;font-size:12px;">发货时间：</span><b>卖家承诺订单在买家付款后,72小时内发货
+							</b>
+							<span style="display:block;float:right;font-family: 微软雅黑;">商品合计：￥<b class="cartmoneys">11.50</b></span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span> 留言：<input type="text" value="" style="width:410px"></span>
+							<span style="display:block;float:right;font-family: 微软雅黑;">运费：&nbsp;<b>￥0.00</b></span>
+						</td>
+					</tr>
+					<tr >
+						<td style="float:right;" >商家合计：&nbsp;￥<b style="font-family: 微软雅黑;" class="cartmoneys">11.5</b></td>
+					</tr>
+				
+				
+				</table>
+				
+				<!-- =====================================     订单信息结束
+				=================================== -->
+				
+				<!-- =====================================    优惠方式开始
+				=================================== -->
+				<div id="favorable">
+					<p><b style="font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;选择优惠方式</b>&nbsp;优惠券和积分不能同时使用</p>
+					<br>
+					<p>&nbsp;&nbsp;&nbsp;<input type="checkbox">&nbsp;&nbsp;&nbsp;&nbsp;<b>使用优惠券</b>(您有0张优惠券)</p>
+					<br>
+					<p>&nbsp;&nbsp;<input type="checkbox">&nbsp;&nbsp;&nbsp;&nbsp;<b>使用积分</b>(您有1积分)</p>
+					
+				</div>
+			
+				<hr style="width:980px;margin:0 auto">
+				<div id="submit">
+					<p>
+						由于抢购人数众多，但商品库存有限，订单提交后请在30分钟内支付，超时将自动取消订单
+
+
+						<span style="float:right;">共<span class="numberses">2</span>件，商品总计：￥<b class="cartmoneys">50.50</b></span>
+					</p>
+					<br>
+					<p><input type="checkbox" checked>我已阅读并同意
+						<a href="">《折800特卖商城服务协议》</a><span style="float:right;">运费总计：<b>￥0.00</b></span>  
+					</p>
+					<br>
+						<a href="<{:U('Cart/cart')}>"><<返回购物车修改 </a>
+						<div style="clear:both"></div>
+						<!--填写地址-->
+						<div class="cartadddefault">
+							<div class="cartadddefault_topsize">
+								<div class="cartadddefault_topsize_money">
+									 ￥<span id="cartadddefault_topsize_money_size" class="cartmoneys">328.00</span>
+								</div>
+								<div class="cartadddefault_topsize_moneying">
+									实付款：
+						</div>
+							</div>
+					<form action="<{:U('Cart/insertpay')}>" method="post">
+						<input type="hidden" name="count" value="<{$cartnums}>">
+					<foreach name="cartlistess" item="cartliss">	
+						<!--gid-->
+						<input type="hidden" name="gid[]" value="<{$cartliss['gid']}>">
+					</foreach>
+					<foreach name="addresslist" item="addresslists">
+						<if condition="$addresslists['defaultadd'] eq 1">
+						<!-- 默认地址ID -->
+						<input type="hidden" name="aid" value="<{$addresslists['id']}>">
+						<!-- 商品总价 -->
+						<input type="hidden" value=""  name="totalprice" class="inertadd">
+
+							<div class="cartadddefault_topsize">
+								<div class="cartadddefault_topsize_rightsize">
+
+									 <{$addresslists['defaultadd']? $addresslists['address']:"没有设置地址"}>
+								</div>
+								<div class="cartadddefault_topsize_leftsize">
+									邮寄至：
+								</div>
+							</div>
+							<div class="cartadddefault_topsize">
+								<div class="cartadddefault_topsize_tel">
+									<{$addresslists['tel']}>
+								</div>
+								<div class="cartadddefault_topsize_name">
+									收货人：
+								</div>
+							</div>
+						</div>
+						<div style="clear:both"></div>
+						<input type="submit" value="提交订单" style="float:right;width:250px;height:60px;font-size:25px;font-family:微软雅黑;background:#CD1923;color:#FFFFFF;border:none" class="fromsub">
+				</div>
+					</form>
+				 		 <else />
+				 		 <div style="clear:both"></div>
+							<span></span>	
+					 	</if>	
+
+					</foreach>
+				<div style="clear:both;"></div>
+			<!-- =====================================    优惠方式结束
+			=================================== -->
+		<!--弹出框-->
+		<include file="Cart/cartdate" />
+		<!--弹出框结束-->
+		<div style="float:right;margin-top:80px">
+		<include file="Public/blogroll" />
+		<div style="clear:both;"></div>
+		<{:W('Public/footer')}>
+		<!-- <include file="Public/footer" /> -->
+		</div>
+	</body>
+
+		<!-- ================ 表格信息验证 ========================= -->
+
+</html>

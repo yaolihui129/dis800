@@ -1,0 +1,30 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+
+.raffle_out{
+	width:138px;
+	height:132px;
+	position:absolute;
+	right:34px;
+	top:183px;
+}
+.raffle_out_pic{
+	width:86px;
+	height:132px;
+	left:52px;
+	background:url(../images/public/right_access_default.gif);
+	float:right;
+	position:absolute;
+	display:block;
+}
+.raffle_out_pic_click{
+	width:138px;
+	height:132px;
+	background:url(../images/public/right_access_hover.png);
+	float:right;
+	position:absolute;
+	left:138px;
+	display:none;
+}

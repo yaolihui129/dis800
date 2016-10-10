@@ -1,0 +1,124 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+#goodslist_box{
+	width:100%;
+	background:#F2F2F2;
+}
+#goodslist_main{
+	width:980px;
+	height:800px;
+	/*border:1px solid black;*/
+	margin:0 auto;
+}
+#goodslist_main p{
+	font-size: 14px;
+	height:20px;
+	padding:5px;
+}
+#goodslist_main p a{
+	text-decoration:none;
+	color:#333;
+	font-size: 14px;
+}
+#goodslist_main p a:hover{
+	color:red;
+}
+#goodslist_main_pic{
+	width:980px;
+	/*height:500px;*/
+	/*border:1px solid black;*/
+}
+#goodslist_pic{
+	width:312px;
+	height:305px;
+	border:1px solid #fff;
+	float:left;
+	margin-left:10px;
+
+}
+#goodslist_pic:hover{
+	width:312px;
+	height:305px;
+	border:1px solid #ccc;
+	float:left;
+	margin-left:10px;
+
+}
+.goodslist_goodpic{
+	width:290px;
+	height:190px;
+	margin:0 auto;
+}
+#goodslist_goodpic_new{
+	float:left;
+	position: relative;
+	z-index: 22;
+}
+#goodslist_goodpic_pic{
+	width:290px;
+	height:190px;
+	margin:0 auto;
+	float:left;
+	position: relative;
+	top:-48px;
+}
+.goodslist_good{
+	width:312px;
+	height:110px;
+	/*border:1px solid yellow;*/
+}
+.goodslist_good p a{
+	position: relative;
+	top:-30px;
+}
+.good_pric{
+	font-size:20px;
+	color:#FD4700;
+	font-weight: bold;
+	font-family: 微软雅黑;
+	padding-left:10px;
+}
+.good_price{
+	font-size:25px;
+	color:#FD4700;
+	font-weight: bold;
+	font-family: 微软雅黑;
+}
+#good_post{
+	width:30px;
+	height:18px;
+	background: url(../images/goods/ju_icons2.png) 0px 0px;
+	position: relative;
+	top:-7px;
+	left:261px;
+}
+#good_tpic{
+	width:20px;
+	height:18px;
+	background: url(../images/goods/icon4.png) 29px -16px;
+	float:right;
+	position: relative;
+	top:-27px;
+	left:-53px;
+}
+.good_tfont{
+	font-size:14px;
+	color:#979797;
+	font-family: 微软雅黑;
+	float:right;
+	position: relative;
+	top:-27px;
+	left:0px;
+}
+#leftstrip_mune{
+	width:145px;
+	height:560px;
+	/*border:1px solid black;*/
+	position: fixed;
+	bottom: 30px;
+	left: 30px;
+	display: none;
+
+}

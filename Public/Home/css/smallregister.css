@@ -1,0 +1,63 @@
+A{text-decoration:NONE}
+	.box{
+		/*border:5px solid black;*/
+		box-shadow:1px 2px 2px 10px #D1D1D1;
+		width:300px;
+		height:350px;
+		margin:0 auto;
+	}
+	.table{
+			margin-top:30px;
+			margin-left:20px;
+	}
+	#font{
+		color:#333333;
+		font-size:12px;
+		margin-top:-10px;
+	}
+	#span{
+		font-family:微软雅黑;
+		color:#999999;
+		font-size:12px;
+	}
+	#input{
+		width:200px;
+		height:30px;
+	}
+	#password{
+		width:200px;
+		height:30px;
+	}
+	#repassword{
+		width:200px;
+		height:30px;
+	}
+	#code{
+		width:100px;
+		height:30px;
+	}
+
+	#submit{
+		width:260px;
+		height:30px;
+		background:#EC1611;
+		border:0px;
+		color:#fff;
+	}
+	#font_two{
+		color:#666666;
+		font-size:12px;
+	}
+
+
+	body{
+		font:normal 12px/17px Arial;
+	}
+	div{
+  	  padding:2px;
+	} 
+
+	.focus { 
+		 border: 1px solid #f00;
+		 background: #fcc;
+	} 

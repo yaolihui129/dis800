@@ -1,0 +1,47 @@
+<extend name="Public:menu" />
+	<block name="user">
+		<link href="__CSS__site.css" rel="stylesheet" type="text/css">
+		<script src="__JS__jquery-1.8.3.js"></script>
+		<script src="__JS__site.js" rel="stylesheet" type="text/javascript"></script>
+					<!--右边地址填写部分-->
+			<form action="__CONTROLLER__/site_inert" method="post" onsubmit="return judge()">
+
+			<div class="body_address">
+				<div class="body_address_user">
+					<input type="hidden" name="uid" value="<{$Think.session.id}>">
+					<span>*&nbsp</span>收货人：&nbsp<input type="text" name="name" value="" class="body_address_user_address">
+				</div>
+
+				<div class="body_address_phone">
+					<span>*&nbsp</span>&nbsp&nbsp手机：&nbsp<input type="text" name="tel" value="" class="body_address_phone_address">
+				</div>
+
+				<div class="body_address_email">
+					&nbsp&nbsp&nbsp&nbsp邮箱：&nbsp<input type="email" name="email" value="" class="body_address_user_email">
+				</div>
+
+				<div class="body_address_site">
+					<span>*&nbsp</span><pre>所在地区：</pre>
+
+					<include file="PUBLIC/city_relevance" />
+
+					<span></span>邮编：<input type="text" name="postcode" value="" class="body_address_site_code">
+				</div>
+
+				<div class="body_address_minute">
+					<span>*&nbsp</span>详细地址：
+					<input type="text" name="add" value="" class="body_address_user_minute">
+				</div>
+
+				<!--警告栏-->
+				<div class="body_address_hint"></div>
+				<!--警告兰结束-->
+
+				<div class="body_address_submit">
+					<input type="submit" name="addsub" value="保存收货信息" class="body_address_addsub">
+				</div>
+			</div>
+			<!--右边地址填写部分-->
+
+			</form>
+	</block>

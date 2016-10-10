@@ -1,0 +1,25 @@
+<extend name="pwd" />
+<block name="newpass">
+		<link href="__CSS__two.css" type="text/css" rel="stylesheet">
+			<table class="table">
+				<tr>
+					<td><span id="selctormode">请您选择找回方式:<span><td><br><br><br>
+				</tr>
+				<tr>
+					<td>
+						<a href=""><img src="__IMAGES__login/2015-04-20_200251.png"></a>&nbsp;&nbsp;&nbsp;
+						<a href=""><img src="__IMAGES__login/2015-04-20_200348.png"></a>
+						<a href="<{:U('Login/three')}>"><img src="__IMAGES__login/u=3456589449,1851076315&fm=11&gp=0.jpg"style="width:180px;height:110px;"></a>
+					</td>
+				</tr>
+			</table>
+	<script>
+		$(function(){
+			$(".box4,.box5,.box3,.box2,.box1,.box").css({"background":"#E9E9E9"});
+			$("#explain span").css({"color":"#999"})
+			$(".box2").css({"background":"#F8B986"})
+			$("#explain span").eq(1).css({"color":"#F8B986"})
+			
+		});
+	</script>
+</block>

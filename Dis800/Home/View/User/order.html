@@ -1,0 +1,225 @@
+<extend name="Public:menu" />
+	<block name="user">
+		<link href="__CSS__order.css" rel="stylesheet" type="text/css">
+		<script src="__JS__jquery-1.8.3.js"></script>
+		<script src="__JS__order.js" rel="stylesheet" type="text/javascript"></script>
+		<!--右部订单位置-->
+		<div class="body_in">
+			<div class="body_order">
+				<div class="body_order_toptext">
+				<pre>个人中心 > 我的订单 > <span>折800订单</span></pre>
+				</div>
+				<div class="body_order_toptext_phone">
+					客服电话：400-0611-800
+				</div>
+				<div class="body_order_warning">
+					<div class="body_order_warning_pic">
+					</div>
+					<pre><span>&nbsp安全提示！</span>
+ 下单后，给您发送链接办理退款的都是骗子！折800不会以系统升级、订单异常等原因要求您退款，谨防假冒客服电话诈骗！<a href="#">更多防骗提示>></a></pre>
+				</div>
+				<!--选项卡部分-->
+				<div class="body_order_warning_box">
+					<ul>
+						<li id="body_order_warning_box_indent" class="actives"><a href="<{:U('User/order')}>?static=a">折800订单</a></li>
+						<li id="body_order_warning_box_menudiv"></li>
+
+						<li class="actives"><a href="<{:U('User/order')}>?static=0">&nbsp待付款&nbsp</a></li>
+						
+						<li id="body_order_warning_box_menudiv"> </li>
+
+						<li class="actives"><a href="<{:U('User/order')}>?static=1" >&nbsp待发货&nbsp</a></li>
+						 
+						<li id="body_order_warning_box_menudiv"> </li>
+						
+						<li class="actives"><a href="<{:U('User/order')}>?static=2">&nbsp待收货&nbsp</a></li>
+						
+						<li id="body_order_warning_box_menudiv"> </li>
+
+						<li><a><sub>&nbsp<span>订单数量：<span style="font-size:18px"><{$counts}></span></span></sub></a></li>
+					</ul>
+					<!--回收站开始-->
+					<div class="body_order_warning_box_recycle">
+						订单回收站
+					</div>
+					<!--回收站结束-->
+					<div class="body_order_warning_picpackage">
+					<div class="body_order_warning_box_pic"></div>
+					</div>
+					
+				</div>
+				<div class="body_order_warning_title">
+					<!--标题-->
+					<form action="#" method="">
+					<ul>
+						<li>商品</li>
+						<li>单价(元)</li>
+						<li>数量</li>
+						<li>商品操作</li>
+						<li>实付款(元)</li>
+						<li>
+							<select>
+								<option value="">交易状态</option>
+							</select>
+						</li>
+						<li>操作</li>
+					</ul>
+					<!--标题结束-->
+					</form>
+				</div>
+
+
+
+
+				<div class="body_order_comm">
+
+
+				 <foreach name="list" item="orderlists">
+
+				  <div class="body_order_comm_topcase">
+					
+						<ul>
+							<li><span><{$orderlists['time']|date="Y-m-d H:i:s",###}></span></li>
+							<li>订单号:<{$orderlists['id']}></li>
+							<li>商家：聚美依女装特卖店</li>
+						</ul>
+					<!--第一个图片-->
+					<div class="body_order_comm_picone">
+					</div>
+					<!--第一个图片结束-->
+
+					<!--第二个图片-->
+					<div class="body_order_comm_pictwo">
+					</div>
+					<!--第二个图片结束-->
+				  </div>	
+
+						<!--订单内容-->
+				<foreach name="orderinfolists" item="orderinfolistes">	
+
+				<if condition="$orderinfolistes['oid'] eq $orderlists['id']">	
+				<div class="body_order_comm_bigcentent">
+					<div class="body_order_comm_centent">
+						<!--商品图片-->
+						<div class="body_order_comm_centent_pic">
+							<img width="100px" height="100px" src="<{$orderinfolistes['pic']}>">
+						</div>
+						<!--商品图片结束-->
+
+						<div class="body_order_comm_centent_name">
+
+							<!--商品尺码 信息-->
+								<div class="body_order_comm_centent_name_top">
+										<a href="#"><{$orderinfolistes['name']}></a>  <a href="#" id="body_order_comm_centent_name_top_photo">交易快照</a>
+								</div>
+								
+								<div class="body_order_comm_centent_name_bottom">
+									颜色:<{$orderinfolistes['color']}>&nbsp尺码:<{$orderinfolistes['size']}>
+								</div>
+							<!--商品尺码 信息结束-->
+					   </div>
+
+						<!--价格-->
+						<div class="body_order_comm_centent_cost">
+							<p><{$orderinfolistes['price']+100}></p>
+							<span><{$orderinfolistes['price']}></span>
+						</div>
+						<!--价格结束-->
+
+						<!--数量-->
+						<div class="body_order_comm_centent_num">
+							<{$orderinfolistes['number']}>
+						</div>
+						<!--数量结束-->
+					</div>
+
+					<div class="body_order_comm_money">
+						<span><{$orderinfolistes['price']*$orderinfolistes['number']}></span>
+						<!-- 问号 -->
+						<div class="body_order_comm_money_pic"></div>
+						<!--问号结束-->
+						<div class="body_order_comm_money_bottomtext">
+							<!-- 包邮 -->
+						</div>
+					</div>
+
+					<div class="body_order_comm_information">
+					 <switch name="orderlists.static"> 
+					 	<case value="0">
+							<span>待付款</span>
+							<span><a href="<{:U('Cart/change_static')}>?oid=<{$orderlists['id']}>">点击付款</a></span>
+						</case>
+						<case value="1">
+							<span>待发货</span>	
+						</case>
+						<case value="2">
+						<span>待收货</span>
+						<span><a href="<{:U('Cart/change_sta')}>?oid=<{$orderlists['id']}>">确认收货</a></span>
+						</case>
+						<case value="3">
+						<span>交易完成</span>
+						<span><a href="<{:U('Favorite/diss')}>?id=<{$orderinfolistes['gid']}>" style="color:#333333">商品评价</a></span>
+						</case>
+					</switch>
+						<!--问号-->
+						<div class="body_order_comm_information_pic"></div>
+						<!--问号结束-->
+						<div class="body_order_comm_information_bottomtext">
+							
+							<a href="#">订单详情</a>
+						</div>
+					</div>
+
+
+				</div>
+			</if>
+
+			</foreach>
+			</foreach>
+					<!--订单内容结束-->
+				<!--选项卡部分结束-->
+
+				<!--分页开始-->
+				<form action="#" method="">
+ 				<div class="body_order_warning_page">
+					<!-- 每页显示 -->
+ 		
+					<div class="body_order_warning_page_number">
+           <!-- 每页显示&nbsp<select name="page">
+									<option value="">10条</option>
+									</select> -->
+					</div> 
+					<!-- 每页显示结束 -->
+
+					<!-- 共几页 -->
+					<div class="body_order_warning_page_pagenum">
+					
+					</div>
+					<!--共几页结束
+
+					<!-- 末页 -->
+
+
+					<!--下一页 上一页 中间显示的页码-->
+					<div class="body_order_warning_page_next">
+			<!-- 			<a href="#">下一页>></a> -->
+						<{$page}>
+							<!--分页-->
+					</div>
+
+
+				</div>
+					</form>
+				<!--分页结束-->
+
+					<div class="body_order_warning_page_zhe800pic">
+						<div class="body_order_warning_page_togglepic">
+						</div>
+					</div>
+				</div>
+		</div>	
+	</div>
+
+		<div style="clear:both"></div>
+		<!--右部订单位置-->
+	</block>

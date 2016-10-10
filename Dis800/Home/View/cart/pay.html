@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>【折800官网】支付完成</title>
+		<link href="__CSS__pay.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<include file="Public/header" />
+		<!-- =====================================     快捷支付标题    =================================== -->
+		<div id="title">
+			<div id="title_1">
+				<a href=""><img src="__IMAGES__cart/logo_min_2014.png"></a>
+			</div>
+			<div id="title_2">
+				
+			</div>
+			
+		
+		
+		</div>
+		<!-- =====================================     快捷支付结束    =================================== -->
+
+
+
+
+
+
+	<!-- =====================================     快捷支付开始    =================================== -->
+		<div id="money">
+			<div></div>
+			<div id="money_may">
+					<!-- =====================================     结算支付方式开始    =================================== -->
+				<div id="money_may_font"><b>选择支付方式</b>&nbsp;<b style="color:red;"> 首次使用百度钱包快捷支付立减10元</b></div>
+				
+				<div >
+					<div class="money_may_img"><input type="radio" name="ra" value="1"><img src="__IMAGES__cart/alipay1.png" ></div>	
+					<div class="money_may_img"><input type="radio" name="ra" value="2"><img src="__IMAGES__cart/paywx1.png" ></div>	
+					<div class="money_may_img"><input type="radio" name="ra" value="3"><img src="__IMAGES__cart/unionpay1.png" ></div>	
+					<div class="money_may_img"><input type="radio" name="ra" value="4"><img src="__IMAGES__cart/tenpay1.png" ></div>
+					<div class="money_may_img"><input type="radio" name="ra" value="5"><img src="__IMAGES__cart/baidupic.png"></div>	
+				</div>
+				
+			</div>
+				<!-- =====================================     结算支付方式结束    =================================== -->
+			<hr width="960px" color="#E9E9E9">
+				<!-- =====================================     结算网银支付开始   =================================== -->
+			<div id="money_pay">
+				<div style="height:10px;width:980px;"></div>
+				<div><b>网银支付</b></div>
+				<div class="money_pay_img"><input type="radio" name="ra" value="0"><img src="__IMAGES__cart/icbc.png" class="money_pay_imga"></div>
+				<div class="money_pay_img"><input type="radio" name="ra" value="1"><img src="__IMAGES__cart/ccb.png" class="money_pay_imga"></div>
+				<div class="money_pay_img"><input type="radio" name="ra" value="2"><img src="__IMAGES__cart/boc.png" class="money_pay_imga"></div>
+				<div class="money_pay_img"><input type="radio" name="ra" value="3"><img src="__IMAGES__cart/abc.png" class="money_pay_imga"></div>
+				<div class="money_pay_img"><input type="radio" name="ra" value="4"><img src="__IMAGES__cart/comm.png" class="money_pay_imga"></div>
+				<div class="money_pay_img"><input type="radio" name="ra" value="5"><img src="__IMAGES__cart/cmb.png" class="money_pay_imga"></div>
+				<div class="money_pay_img"><input type="radio" name="ra" value="6"><img src="__IMAGES__cart/citic.png" class="money_pay_imga"></div>
+				<div class="money_pay_img"><input type="radio" name="ra" value="7"><img src="__IMAGES__cart/spdb.png" class="money_pay_imga"></div>
+				<div class="money_pay_img"><input type="radio" name="ra" value="8"><img src="__IMAGES__cart/cib.png" class="money_pay_imga"></div>
+				<div class="money_pay_img"><input type="radio" name="ra" value="9"><img src="__IMAGES__cart/cmbc.png" class="money_pay_imga"></div>
+				
+				<a href="<{:U('Cart/payment')}>"><img src="__IMAGES__cart/2015-04-21_011238.png" style="margin-left:15px; margin-top:20px;"/></a>
+			</div>	
+				<!-- =====================================     结算网银支付开始   =================================== -->
+		</div>
+		<include file="Public/blogroll" />
+		<div style="clear:both"></div>
+		<!-- <include file="Public/footer" /> -->
+		<{:W('Public/footer')}>
+	</body>
+</html>

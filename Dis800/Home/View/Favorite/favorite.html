@@ -1,0 +1,126 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Favorite</title>
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/favorite.css">
+	</head>
+	<body>
+		<include file="Public/header" />
+		<{:W("Public/search")}>
+		<div id="bigtbody">
+		<div id="tbody">
+			<div id="tbody_l">
+				<div id="tbody_l_1">
+					
+					<div id="tbody_l_1_1">
+						<{$Think.session.name}>
+					</div>
+					<div id="tbody_l_1_2">
+						打败了<em style="color:#F6811A;">0%</em>的会员
+					</div>
+					<div id="tbody_l_1_3">
+						<a href="http://www.zhe800.com/profile/my_rank" target="_blank">
+						我的等级
+						</a>
+					</div>
+				</div>
+				<div id="tbody_l_2">
+					<dl>
+						<dt>账户设置</dt>
+						<dd>
+							<a href="">基本资料</a>
+						</dd>
+						<dd>
+							<a href="">安全中心</a>
+						</dd>
+					</dl>
+				</div>
+				<div id="tbody_l_3">
+					<dl>
+						<dt>积分中心</dt>
+						<dd>
+							<a href="">我的订单</a>
+						</dd>
+						<dd>
+							<a href="">折800订单</a>
+						</dd>
+						<dd>
+							<a href="">团800订单</a>
+						</dd>
+					</dl>
+				</div>
+				<div id="tbody_l_4">
+					<dl>
+						<dd>
+							<a href="">我的抽奖</a>
+						</dd>
+						<dd>
+							<a href="">我的消息</a>
+						</dd>
+						<dd style="background:#f2f2f2;border-left:2px solid red">
+							<a href="">我的收藏</a>
+						</dd>
+						<dd>
+							<a href="">我的爆料</a>
+						</dd>
+						<dd>
+							<a href="">邀请</a>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<div id="tbody_bigr">
+				<div id="tbody_r">
+					<div class="tbody_r_1">我的收藏</div>
+					<if condition="($favorite[0] eq '')">
+					<div class="tbody_r_2">
+						<p>
+							还没符合条件的收藏哦！
+						</p>
+					</div>
+					<div class="tbody_r_3">
+						<img src="__IMAGES__favorite/cl.png" usemap="#pic" title="">
+							<map name="pic">
+								<area shape="rect" coords="398,220,519,239" href="../Index/index.html">
+							</map>
+					</div>
+					<else />
+					<foreach name="favorite" item="vo">
+						
+						<div style="width:150px;height:180px;float:left;margin:10px;">
+							<a href="<{:U('Favorite/delete')}>?id=<{$vo['id']}>"><div class="dele"></div></a>
+							<img src="__PUBLIC__<{$vo['good']['pic']}>" style="width:150px;height:150px;">
+							<div style="font-size:12px">
+								<p>收藏时间：<{$vo['time']|date="Y/m/d",###}></p>
+								<p>商品名称：<{$vo['good']['name']}></p>
+
+							</div>
+						</div>
+						
+					</foreach>
+				</if>
+				</div>
+			</div>
+		</div>
+	</div>
+		<div style="clear:left"></div>
+		<include file="Public/blogroll" />
+		<div style="clear:left"></div>
+		<{:W('Public/footer')}>
+		<!-- <include file="Public/footer" /> -->
+	</body>
+
+     <script type="text/javascript">
+           $(function(){
+           for (var i = 0; i < $(".dele").length; i++) {
+             $(".dele").eq(i).click(function(){
+                if(confirm("确定要删除吗？")){
+                  return true;
+                }else{
+                  return false;
+                }
+             });
+           };
+           });
+      </script>   
+</html>

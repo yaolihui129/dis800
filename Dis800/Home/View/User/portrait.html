@@ -1,0 +1,74 @@
+<extend name="Public:menu" />
+<block name="user">
+	<link href="__CSS__portrait.css" rel="stylesheet" type="text/css">
+	<link href="__PUBLIC__/Home/js2/uploadify.css" rel="stylesheet" type="text/css">
+
+				<!--右边填写头像部分开始-->
+			<div class="body_right">
+				<div class="body_right_title">
+					<h2>基本资料</h2>
+				</div>
+ 					<div class="body_right_tab_menu">
+						<ul>
+							<li class="body_right_tab_menu_information"><a href="<{:U('User/information')}>">个人信息</a></li>
+							<li class="body_right_tab_menu_portrait"><a href="<{:U('User/portrait')}>">个人头像</a></li>
+						</ul>
+					</div>
+				<div class="body_right_tab">
+					<div class="body_right_tab_box">
+					<!--头像部分-->
+
+						<div class="body_right_tab_box_information">	
+							<div class="body_right_tab_box_information_pic">
+									<div class="body_right_tab_box_information_pic_inner">
+									<if condition="($leng lt 1)">
+									<img src="__IMAGES__/user/user_default_logo_small.gif" width="70px" height="70px">
+									<else />
+									<img src="__PUBLIC__/<{$user_img}>" style="width:70px;height:70px">
+									</if>
+									</div>
+							</div>
+							<span>当前头像</sapn>
+						</div>
+
+						<!--头像部分结束-->
+					
+						<!--大头像部分-->
+
+						<div class="body_right_tab_box_bigpic">
+							<if condition="($leng lt 1)">
+								<img src="__IMAGES__/user/user_default_logo_normal.gif"></img>
+								<else />
+								<img src="__PUBLIC__/<{$user_img}>" style="width:170px;height:170px"></img>
+							</if>
+						</div>	
+						 	
+
+						<!--大头像部分结束-->
+
+
+						<!--文件上传部分-->
+				<form action="<{:U('User/upload')}>" enctype="multipart/form-data" method="post"  >
+						<div class="body_right_tab_box_file">
+							
+								<input type="file" came="file" name="pic" value="">
+						</div> 
+
+						<!--文件上传部分结束-->
+
+						<div class="body_right_tab_box_filesize">
+							请选择一张您电脑中的图片，然后点击“保存”。
+							支持JPG、PNG、GIF图片类型，不能大于200KB。
+						</div>
+
+						<!--保存按钮-->
+						<div class="body_right_tab_box_save">
+							<input type="submit" value="保存">
+						</div>
+						<!--保存按钮结束-->
+							</form>
+					</div>
+				</div>
+			</div>	
+
+</block>

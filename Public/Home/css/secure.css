@@ -1,0 +1,150 @@
+
+
+/*右边安全中心*/
+.body_right_secure{
+	width:800px;
+	height:492px;
+	float:left;
+	margin-left:20px;
+	margin-top:20px;
+	background:#FBFBFB;
+}
+.body_right_size{
+	float:left;
+	width:800px;
+	height:36px;
+	border-bottom:2px solid #DD0001;
+}
+.body_right_size span{
+	font-size:16px;
+	font-weight:bold;
+	color:#333333;
+}
+.body_right_strip{
+	width:800px;
+	height:36px;
+	float:left;
+	margin-top:20px;
+}
+.body_right_strip_size{
+	width:90px;
+	height:33px;
+	float:left;
+	font-size:15px;
+	color:#333333;
+	margin-top:3px;
+}
+.body_right_strip span{
+	display:block;
+	color:#EC6666;
+	font-size:14px;
+	float:left;
+	margin-left:5px;
+	margin-top:3px;
+}
+.body_right_strip_energy{
+	width:506px;
+	height:16px;
+	float:left;
+	border:3px solid #DCDCDC;
+	margin-left:10px;
+	border-radius:20px;
+}
+.body_right_strip_inner{
+	width:506px;
+	height:16px;
+	float:left;
+	background:#EC6F70;
+	border-radius:20px;
+}
+
+.body_right_email{
+	width:799px;
+	height:47px;
+	float:left;
+	border:1px solid #DBDBDB;
+	margin-top:30px;
+	border-radius:3px;
+}
+.body_right_email_pic{
+	width:45px;
+	height:47px;
+	float:left;
+}
+.body_right_email_pic_inner{
+	width:28px;
+	height:30px;
+	left:left;
+	margin-top:12px;
+	margin-left:12px;
+	background:url(../images/probg.png) 62px -35px;
+}
+.body_right_email_size{
+	width:auto;
+	height:47px;
+	float:left;
+	font-size:14px;
+	color:#333333;
+	text-align:center;
+	line-height:47px;
+}
+.body_right_email_text{
+	width:auto;
+	height:47px;
+	float:left;
+	margin-left:151px;
+	font-size:14px;
+	color:#333333;
+	text-align:center;
+	line-height:47px;
+}
+.body_right_email_text span{
+	color:#E02F2F;
+}
+
+
+
+.body_right_phone{
+	width:799px;
+	height:47px;
+	float:left;
+	border:1px solid #DBDBDB;
+	margin-top:20px;
+	border-radius:3px;
+}
+.body_right_phone_pic{
+	width:45px;
+	height:47px;
+	float:left;
+}
+.body_right_phone_pic_inner{
+	width:28px;
+	height:30px;
+	left:left;
+	margin-top:12px;
+	margin-left:12px;
+	background:url(../images/probg.png) 62px -35px;
+}
+.body_right_phone_size{
+	width:auto;
+	height:47px;
+	float:left;
+	font-size:14px;
+	color:#333333;
+	text-align:center;
+	line-height:47px;
+}
+.body_right_phone_text{
+	width:auto;
+	height:47px;
+	float:left;
+	margin-left:151px;
+	font-size:14px;
+	color:#333333;
+	text-align:center;
+	line-height:47px;
+}
+.body_right_phone_text span{
+	color:#E02F2F;
+}
+/*右边安全中心结束*/

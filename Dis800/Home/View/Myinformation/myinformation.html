@@ -1,0 +1,167 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Favorite</title>
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/favorite.css">
+		<script type="text/javascript" src="__JS__jquery-1.8.3.js"></script>
+	</head>
+	<body>
+		<include file="Public/header" />
+		<{:W("Public/search")}>
+		<!-- =======================  整体body体============================= -->
+		<div id="bigtbody">
+		<div id="tbody">
+			<!-- ===================================== body体左边栏============================== -->
+			<div id="tbody_l">
+				<div id="tbody_l_1">
+					
+					<div id="tbody_l_1_1">
+						<{$Think.session.name}>
+					
+
+				</div>
+					<div id="tbody_l_1_2">
+						打败了<em style="color:#F6811A;">0%</em>的会员
+					</div>
+					<div id="tbody_l_1_3">
+						<a href="http://www.zhe800.com/profile/my_rank" target="_blank">
+						我的等级
+						</a>
+					</div>
+				</div>
+				<div id="tbody_l_2">
+					<dl>
+						<dt>账户设置</dt>
+						<dd>
+							<a href="">基本资料</a>
+						</dd>
+						<dd>
+							<a href="">安全中心</a>
+						</dd>
+					</dl>
+				</div>
+				<div id="tbody_l_3">
+					<dl>
+						<dt>积分中心</dt>
+						<dd>
+							<a href="">我的订单</a>
+						</dd>
+						<dd>
+							<a href="">折800订单</a>
+						</dd>
+						<dd>
+							<a href="">团800订单</a>
+						</dd>
+					</dl>
+				</div>
+				<div id="tbody_l_4">
+					<dl>
+						<dd>
+							<a href="">我的抽奖</a>
+						</dd>
+						<dd style="background:#f2f2f2;">
+							<a href="">我的消息</a>
+						</dd>
+						<dd>
+							<a href="">我的收藏</a>
+						</dd>
+						<dd>
+							<a href="">我的爆料</a>
+						</dd>
+						<dd>
+							<a href="">邀请</a>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<!-- ===================================== body体右边栏============================== -->
+			<div id="tbody_bigr">
+				<div id="tbody_r">
+				<div class="tbody_r_1">我的消息</div>
+						<!-- ===========================  后台向前台传值遍历部分======================================== -->
+						<foreach name="data" item="va">
+						<table style="border-bottom:1px solid #ccc;width:700px;height:106px;">
+						<tr id="tbody_r_content">
+							<td id="tbody_r_content_td1"><{$va.time|date="Y-m-d",###}></td>
+							<td id="tbody_r_content_td2">
+								<img src="__IMAGES__favorite/shopping.jpg" style="width:30px;height:30px">
+							</td>
+							<td id="tbody_r_content_td3">
+								<{$va['content']}>
+							</td>
+							<td id="tbody_r_content_td4">
+								<a href="<{:U('Myinformation/delete')}>?id=<{$va['id']}>" class="query">删除</a>
+							</td>
+						</tr>
+					</table>
+					</foreach>
+				</div>
+			</div>
+		</div>
+	</div>
+		<div style="clear:left"></div>
+		<include file="Public/blogroll" />
+		<div style="clear:left"></div>
+		<{:W('Public/footer')}>
+		<!-- <include file="Public/footer" /> -->
+	</body>
+	<script type="text/javascript">
+           $(function(){
+           for (var i = 0; i < $(".query").length; i++) {
+             $(".query").eq(i).click(function(){
+                if(confirm("确定要删除吗？")){
+                  return true;
+                }else{
+                  return false;
+                }
+             });
+           };
+           });
+      </script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Myinformation</title>
+		<link rel="stylesheet" href="__CSS__myinformation.css" type="text/css">
+	</head>
+	<body>
+		<div id="tbody_r">
+			<div id="tbody_r_all">
+				<div id="tboyd_r_title">
+					<div id="tbody_r_title_font"><h2>我的消息</h2></div>
+				<div>
+				<hr style="width:717px;color:#C41304;">
+				<table>
+					<tr id="tbody_content">
+						<td id="tbody_r_content_td1">2014-05-14</td>
+						<td id="tbody_r_content_td2"></td>
+						<td id="tbody_r_content_td3">
+							亲爱的用户您好，折800每日千款精选超值商品供您选择，签到还可领积分免费换取精美礼品，欢迎您的光临
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div style="clear:left"></div>
+		<include file="Public/blogroll" />
+		<div style="clear:left"></div>
+		<include file="Public/footer" />
+	</body>
+</html>

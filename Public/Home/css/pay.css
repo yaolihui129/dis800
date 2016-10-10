@@ -1,0 +1,96 @@
+#title{
+	padding-top:18px;
+	margin:0 auto;
+	width:980px;
+	height:34px;
+	line-height:34px;
+	padding-bottom:20px;
+	font-family:微软雅黑;
+	font-size:12px;
+}
+#title_1{
+	
+	height:34px;
+	width:195px;
+	float:left;
+	
+}
+#title_2{
+	
+	height:18px;
+	
+	position:relative;
+	background:url(../images/cart/step2.png) 8px 18px;
+	width:296px;
+	float:right;
+
+}
+
+
+#money{
+	padding-top:10px;
+	margin:0 auto;
+	width:980px;
+	height:483px;
+	border:1px solid #E9E9E9;
+	
+}
+#money_may{
+	width:980px;
+	height:203px;
+	padding-top:10px;
+	
+	
+	
+	
+}
+#money_may_font{
+	padding-left:15px;
+	font-size:13px;
+}
+.money_may_img{
+	float:left;
+	width:120px;
+	height:58px;
+	padding-left:69px;	
+}
+.money_may_img input{
+	float:left;
+	width:10px;
+	height:10px;
+	position:relative;
+	top:35px;
+	left:-25px;
+	
+}
+
+#money_pay{
+	width:980px;
+	height:280px;
+	padding-left:15px;
+}
+.money_pay_img{
+    width: 172px;
+    height: 52px;
+    padding: 5px;
+    float: left;
+	margin-right:13px;
+	margin-bottom:20px;
+}
+.money_pay_imga{
+    width: 142px;
+    height: 52px;
+    padding: 5px;
+    float: left;
+	border:1px solid #ccc;
+	margin-left:12px;
+}
+
+.money_pay_img input{
+    width: 10px;
+    height: 10px;
+	position:relative;
+	top:35px;
+	left:-8px;
+    float: left;
+}

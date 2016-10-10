@@ -1,0 +1,69 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>head搜</title>
+	<link rel="stylesheet" type="text/css" href="__CSS__search.css">
+	<script type="text/javascript" src="__JS__jquery-1.8.3.js"></script>
+</head>
+<body>
+	<div>
+		<!-- <div id="topTu"><img src=""></div> -->
+		<div id="search">
+			<a href="<{:U('Index/index')}>"><div id="login"><img src="__IMAGES__public/new_logo4_min.png"></div></a>
+			<div id="searcher">
+				<input type="text" name="search" value="" id="search_1"><button id="search_2">搜索</button>
+				<div id="one_search">
+				</div>
+			</div>
+
+			<script type="text/javascript">
+				$(function(){
+					$("#search_1").keyup(function(){
+						if($("#search_1").val()!=''){
+							$.ajax({
+	  							url:"__MODULE__/Public/search_ajax",
+	  							data:"key="+$("#search_1").val(),
+	  							type:"post",
+	  							dataType:"json",
+	  							success:function(data){
+	  								// alert(data);
+	  								$("#one_search").empty();
+	  								$(data).each(function  (index) {
+	  								var a = $('<a href="__MODULE__/goods/goodslist/sta/4/id/'+this.id+'/name/'+this.name+'">'+this.name+'</a>');
+	  									$("#one_search").append(a);
+	  								});
+	  							}	
+	  						});	
+						}
+					});
+					$("#search_2").click(function(){
+						
+						window.location.href='__MODULE__/goods/goodslist/sta/5/name/'+$("#search_1").val()+'';
+					});
+
+				});
+			</script>
+			<div id="toolbar_links"><img src="__IMAGES__public/toolbar_links5.png"></div>
+		</div>
+		<div id="navigation">
+			<div class="navigation">
+				<span><a href="<{:U('Index/index')}>">首页</a></span>
+				<foreach name="class" item="vo">
+					<!-- <span><a href="<{:U('Goods/goodslist')}>?id=<{$vo['id']}>&name=<{$vo['name']}>"><{$vo['name']}></a></span> -->
+					<span><a href="<{:U('Goods/goodslist',array("id"=>$vo['id'],"name"=>$vo['name'],"sta"=>1))}>"><{$vo['name']}></a></span>
+				</foreach>
+				<!-- <span><a href="">8块8包邮</a></span> -->
+				<!-- <span><a href="">20元封顶</a></span> -->
+				<!-- <span><a href="">特卖商城</a></span> -->
+				<!-- <span><a href="">积分商城</a></span>	 -->
+				<img src="__IMAGES__public/signin4.gif" style="float:right;position:relative;top:-2px;height:35px">
+				<!-- <div id="navigation_bg">
+					<div id="navigation_none"><img src="__IMAGES__public/500x300.63ef7b3714cfa29c659f7ceb7063e9fd.500x300.jpg"></div>
+				</div> -->
+				<span style="float:right"><a href="">精选预告</a></span>
+			</div>
+		</div>
+		
+	</div>
+</body>
+</html>

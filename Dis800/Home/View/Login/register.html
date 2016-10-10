@@ -1,0 +1,215 @@
+<html>
+	<head>
+		<link rel="shortcut icon" type="image/x-icon" href="__IMAGES__index/fav.png">
+		<title>【折800官网】注册</title>
+		<meta charset="utf-8">
+		<link href="__CSS__register.css" type="text/css" rel="stylesheet">
+		<script src="__JS__jquery-1.8.3.js"></script>
+    </head>
+	<body>
+		<div class="top">
+			<a href="<{:U("Index/index")}>"><img id="imgs" src="__IMAGES__login/logo.png" /></a>
+			<span id="span">
+				已经有团800或折800帐号了？
+				<a href="<{:U("Login/login")}>">去登录</a>
+			</span>
+		</div>
+		<div class="re">
+			<div class="left">
+			<form action="<{:U('login/doregister')}>"  method="post">
+				<table class="table">
+						<!-- ajax判断用户名是否重复 -->
+					<tr>
+						<td>&nbsp;
+							用户名：<input type="text" name="user" id="username" ><br>
+							<span id="user" style="margin-left:80px;font-size:12px;color:#999999;">请输入至少6位的用户名!
+							</span>
+						</td>
+
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;
+							密码：<input type="password" name="pass" id="password"><br>
+							<span id="pwd" style="margin-left:80px;font-size:12px;color:#999999;">
+								请输入至少6位的密码!
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							确认密码：<input type="password" name="repass" id="repassword"><br>
+							<span id="repwd" style="margin-left:80px;font-size:12px;color:#999999;">
+								请确认密码!
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;
+							验证码:<input id="yzm" type="text" name="yzm" style="height:40px;width:100px">
+							<div style="float:right"><img src="<{:U('Login/code')}>" onclick="this.src='<{:U('Login/code')}>?d='+Math.random();">
+								<span>&nbsp&nbsp</span>
+							</div>
+						</td>
+						
+					</tr>
+				</table>
+		
+						<p id="size1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="checkbox1" type="checkbox" checked />我已经认真阅读并同意折800的《用户注册协议》<br>
+						<input id="checkbox" type="checkbox" checked />接收来自折800的优惠信息(可退订)</p>
+				
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" id="submit123" value="同意协议并注册" onclick = "return false" style="margin-left:50px;
+			width:181px;height:33px;background:#FF3B37;color:#fff;border:0px;font-size:14px;" />
+					</form>
+			</div>
+			<div class="right">
+				<img  id="image" src="__IMAGES__login/87c7b842586996318d3fbeb2445ef4f1.jpg" />
+				<div class="size">
+					<span>---------------------还可以使用这些账号登录---------------------</span>
+				</div>
+				
+				&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;
+				<input type="submit" class="sub" value="QQ登陆" />
+				<input type="submit" class="sub" value="百度登陆" />
+			</div>
+		</div>
+		<div class="bottom">
+			<span id="bo">
+				<a href="">京ICP证120075号</a>
+				京ICP备10051110号-5 京公网安备11010502025623 Copyright©2011-2015 版权所有 ZHE800.COM 
+			</span><br>
+			<div class="bottom-img">
+				<a href=""><img  id="img1"src="__IMAGES__login/web_trust.png"></a>
+				<a href=""><img id="img1"src="__IMAGES__login/cert.png"></a>
+			</div>
+		</div>
+	</body>
+	<script>
+		$(function(){
+			var flag1 = 0;											//用户名标志
+			var flag2 = 0;											//密码标志
+			var flag3 = 0;											//重复密码标志
+			var flag4 = 0;											//验证验证码
+			$('#username').on('blur keyup',function(){			 	//验证用户，不能有空格且长度不能小于6
+				var o = $(this).val();
+				if(o.match(/\s/)){
+					$('#user').html('<font style = "color:red">用户名不能有空格</font>');
+					flag1 = 0;
+				}else{
+					if(o.length<6){
+						$('#user').html('<font style = "color:red">用户名至少6位</font>');
+						flag1 = 0;
+					}else{
+						$('#user').html('<font style = "color:green">用户名格式正确</font>');
+						flag1 = 1;
+						//判断用户名是否存在
+						$.ajax({
+							url:'__MODULE__/Login/checkname',
+							type:'post',
+							//传送的数据
+							data:'user='+n(),
+							dataType:'json',
+							success:function(data){
+								console.log(data);
+								if(data){
+									$('#user').html('<font style = "color:red">用户名已被注册</font>');
+									flag1= 0;
+								}else{
+									$('#user').html('<font style = "color:green">用户名可用</font>');
+									flag1 = 1;
+								}
+							}
+						});
+
+					}
+				}
+			});
+
+			$('#password').on('blur keyup',function(){				//验证密码，不能有空格且长度不能小于6
+				var o = p();
+				if(o.match(/\W/)){
+					//不能有空格
+					$('#pwd').html('<font style = "color:red">密码不能有空格</font>');
+					flag2 = 0;
+				}else{
+					if(o.length<6){
+						$('#pwd').html('<font style = "color:red">密码至少6位</font>');
+						flag2 = 0;
+					}else{
+						$('#pwd').html('<font style = "color:green">密码格式正确</font>');
+						flag2 = 1;
+					}
+				}
+			});
+
+			$('#repassword').on('blur keyup',function(){			//验证重复密码，必须与原密码相同
+				if(p() == r()){
+					//验证通过
+					$('#repwd').html('<font style = "color:green">重复密码一致</font>');
+					flag3 = 1;
+				}else{
+					$('#repwd').html('<font style = "color:red">重复密码不一致</font>');
+					flag3 = 0;
+				}
+			});
+			//验证码失去焦点事件
+
+			$('#yzm').blur(function(){
+				$.ajax({
+					url:'__MODULE__/Login/check_verify',
+					type:'post',
+					data:'code='+y(),
+					dataType:'json',
+					success:function(data){
+						if(data){
+							$('#yzm').next().children('span').html('<font style = "color:green">√</font>');
+							flag4 = 1;
+						}else{
+							$('#yzm').next().children('span').html('<font style = "color:red">×</font>');
+							flag4 = 0;
+						}
+					}
+				});
+			});
+			//提交时候的判断
+			$('#submit123').click(function(){
+				o = c();
+				if(o && flag1 && flag2 && flag3 && flag4){
+					$.ajax({
+						url:'__MODULE__/Login/doregister',
+						type:'post',
+						data:'user='+n()+'&pass='+p(),
+						dataType:'json',
+						success:function(data){
+							if(data){
+								location.href = "<{:U('Home/Index/index')}>";
+							}else{
+								location.href = '';
+							}
+						}
+					});
+				}else{
+					if(!flag1){
+						alert("请填写正确的用户名");
+					}else if(!flag2){
+						alert("请填写正确的密码");
+					}else if(!flag3){
+						alert("重复密码不一致");
+					}else if(!flag4){
+						alert("验证码不正确");
+					}else{
+						alert("你没有接受协议！");
+					}	
+					return false;
+				}
+			});
+			//获取
+			function n(){return $('#username').val();}					//用户名
+			function p(){return $('#password').val();}					//密码
+			function r(){return $('#repassword').val();}				//重复密码
+			function c(){return $('#checkbox1').val();}					//是否通过协议			
+			function y(){return $('#yzm').val();}						//验证码
+		});
+	</script>
+</html>
+
+

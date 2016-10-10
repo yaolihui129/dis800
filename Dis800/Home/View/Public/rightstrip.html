@@ -1,0 +1,164 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link href="__CSS__rightstrip.css" rel="stylesheet" type="text/css">
+		<script src="__JS__jquery-1.8.3.js"></script>
+		<script src="__JS__rightstrip.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<!--友情框-->
+		<div class="out">
+		<div class="out_happy">
+			喝杯春茶，<br>签到文艺一天	
+		</div>
+			<div class="out_rhombus">
+				◆
+			</div>
+		</div>
+			<!--飞入意见反馈-->
+		<div class="flewidea">
+			<div class="flewidea_happy">
+				意见反馈
+			</div>
+			<div class="flewidea_rhombus">
+				◆
+			</div>
+		</div>
+			<!--飞入意见反馈-->
+		<!--友情框结束-->
+
+			<!--飞入回到顶部-->
+		<div class="rightfloat_top_flew">
+			<div class="rightfloat_top_flew_top">
+				返回顶部
+			</div>
+			<div class="rightfloat_top_flew_rhombus">
+				◆
+			</div>
+		</div>
+			<!--飞入回到顶部-->
+
+			<!--飞入常见问题-->
+		<div class="opinion_issue_flew">
+			<div class="rightfloat_question_text">
+				常见问题
+			</div>
+			<div class="rightfloat_question_rhombus">
+				◆
+			</div>
+		</div>
+			<!--飞入常见问题结束-->
+
+			<!--飞入我的优惠劵-->
+		<div class="rightfloat_shop_roll_flew">
+			<div class="rightfloat_shop_roll_text">
+				我的优惠劵
+			</div>
+			<div class="rightfloat_shop_roll_rhombus">
+				◆
+			</div>
+		</div>
+			<!--飞入我的优惠劵结束-->
+
+			<!--飞入我的订单-->
+		<div class="rightfloat_shop_order_flew">
+			<div class="rightfloat_shop_order_flew_text">
+				我的订单
+			</div>
+			<div class="rightfloat_shop_order_flew_rhombus">
+				◆
+			</div>
+		</div>	
+			<!--飞入我的订单结束-->
+
+			<!--飞入二维码-->
+		<div class="rightfloat_sweep_flew">
+			<div class="rightfloat_sweep_flew_text">
+			</div>
+			<div class="rightfloat_sweep_flew_rhombus">
+				◆
+			</div>
+		</div>	
+			<!--飞入二维码结束-->
+
+			<!--飞入消费保障-->
+		<div class="rightfloat_safeguard_flew">
+			<div class="rightfloat_safeguard_flew_text">
+				消费保障
+			</div>
+			<div class="rightfloat_safeguard_flew_rhombus">
+				◆
+			</div>
+		</div>	
+			<!--飞入消费保障结束-->
+
+
+
+		<div class="rightfloat">
+			<div class="rightfloat_headerpic"></div>
+			<div class="rightfloat_shop">
+				<!--购物车图片-->
+				<a href="<{:U('Cart/cart')}>"><div class="rightfloat_shop_shoppic">
+				</div></a>
+				<!--购物车图片结束-->
+				<div class="rightfloat_shop_num">
+					<{$Think.session.cart_num}>
+				</div>
+			</div>	
+			<!--我的订单-->
+				<a href="<{:U('User/order')}>"><div class="rightfloat_shop_order">
+				</div></a>
+			<!--我的订单结束-->
+
+			<!--卷-->
+			<div class="rightfloat_shop_roll">
+				<div class="rightfloat_shop_roll_num">
+					0
+				</div>
+				<div class="rightfloat_shop_roll_pic">
+					劵
+				</div>
+			</div>
+			<!--卷结束-->
+
+			<!--会跳的图片-->
+			<div class="rightfloat_jumppic">
+			</div>
+			<!--会跳的图片结束-->
+
+			<!--扫一扫-->
+			<div class="rightfloat_sweep">
+			</div>
+			<!--扫一扫结束-->
+			
+			<!--问号-->
+			<div class="rightfloat_question">
+			</div>
+			<!--问号结束-->
+
+			<!--消费保障-->
+			<div class="rightfloat_safeguard">
+			</div>
+			<!--消费保障结束-->
+
+			<!--意见反馈-->
+			<div class="rightfloat_opinion">
+			</div>
+			<!--意见反馈结束-->
+
+			<!--返回顶部-->
+			<a href="#righttop"><div class="rightfloat_top">
+			</div></a>
+			<!--返回顶部结束-->
+
+		</div>
+		<!--遮罩层-->
+		<include file="PUBLIC/smallshade" />
+		<!--遮罩层-->
+
+		<!--小栏目登录-->
+		<include file="LOGIN/smalllogin" />
+		<!--小栏目登录结束-->
+	</body>
+</html>

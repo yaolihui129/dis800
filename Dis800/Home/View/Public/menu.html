@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title></title>
+	<link href="__CSS__menu.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<include file="Public/header" />
+	<{:W('Public/search')}>
+				<!--center-->
+		<div class="body">
+				<!--左部菜单部分-->
+			<div class="body_lfet">
+				<ul>
+					<li id="body_lfet_first">&nbsp&nbsp账户设置</li>
+					<li><a href="<{:U('User/information')}>">基本资料</a></li>
+					<li><a href="<{:U('User/secure')}>">安全中心</a></li>
+
+					<li id="body_lfet_first">&nbsp&nbsp积分中心</li>
+					<li><a href="#">我的积分</a></li>
+					<li><a href="#">我的礼品</a></li>
+					<li><a href="<{:U('User/judge')}>">收货地址</a></li>
+
+					<li id="body_lfet_first">&nbsp&nbsp我的订单</li>
+					<li><a href="#">&nbsp我的优惠劵</a></li>
+					<li><a href="<{:U('User/order')}>">&nbsp折800订单</a></li>
+
+					<li id="body_lfet_last"><a href="<{:U('Myinformation/myinformation')}>">&nbsp我的消息</a></li>
+					<li><a href="<{:U('Favorite/favorite')}>">&nbsp我的收藏</a></li>
+					<li><a href="#">&nbsp我的爆料</a></li>
+					<li><a href="#">&nbsp邀请好友</a></li>
+				</ul>
+			</div>
+			<block name="user"></block>
+			<!--左部菜单部分结束-->
+		</div>
+		<include file="public/blogroll" />
+		<div style="clear:both;"></div>
+		<{:W('Public/footer')}>
+		<!-- <include file="Public/footer" /> -->
+</body>
+</html>

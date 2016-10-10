@@ -1,0 +1,315 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>【折800官网】购物车</title>
+		<link rel="stylesheet" href="__CSS__cart.css" type="text/css">
+		<script src="__JS__jquery-1.8.3.js"></script>
+		<script src="__JS__cart.js" rel="stylesheet" type="text/javascript"></script>
+		</style>
+	</head>
+	<body>
+		<include file="Public/header" />
+
+
+			<!-- ----------------- 购物车标题开始 ------------------------------>
+	
+			<div id="title">
+				<div id="title_1">
+					<a href=""><img src="__IMAGES__cart/logo_min_2014.png"></a>
+				</div>
+				<div id="title_2">
+					<img src="__IMAGES__cart/step.png">
+				</div>
+			</div>
+
+
+		<!--判断是否等于空-->
+		<if condition="$cartnum neq ''">
+
+
+			<div id="num">
+				<div id="num_1" class="cartnum_1">购物车<span style ="font-color:#E01914;color:#F60000;font-size:23px;font-family:Arilal;font-weight:bold;"></span></div>
+				<div id="num_2">
+					<img src="__IMAGES__cart/icon10.png">
+				</div>
+			
+		
+			</div>
+			<!-- ----------------- 购物车标题结束------------------------------>
+			
+
+
+
+			
+				<!-- ----------------- 购物车内容开始------------------------------>
+		<div id="content" class="content">
+			<table border="0" width="980px" cellspacing="0" cellpadding="5px">
+				<tr class="asdsadasd">
+					<th class="tdcheckbox">
+						<input type="checkbox" name="id[]"  style="margin-left:-14px" id="CheckedAll">
+					</th>
+					<th style="color:#666666">
+						<span style="float:left;color:#333333" id="CheckedAll">全选</span>
+						<span style="float:right;padding-right:232px;color:#333333">商品</span>	
+					</th>
+					<th style="color:#333333">单价(元)</th>
+					<th style="color:#333333">数量</th>
+					<th style="color:#333333">金额(元)</th>
+					<th style="color:#333333">操作</th>
+				</tr>
+				<tr>
+	<!-- 				<td class="tdcheckbox" style="height:60px;text-align:left">
+
+					</td> -->
+					<td colspan="6" style="font-size:13px;height:60px;text-align:left;color:#666666">
+						
+						伊诺小镇百顺婴童童装特卖店
+						<img src="__IMAGES__cart/pa.gif" class="tdcheckboximg">
+					</td>
+					<tr style="height:1px">
+					<td style="background:#C6C6C6"></td>
+					<td style="background:#C6C6C6"></td>
+					<td style="background:#C6C6C6"></td>
+					<td style="background:#C6C6C6"></td>
+					<td style="background:#C6C6C6"></td>
+					<td style="background:#C6C6C6"></td>
+					</tr>
+				</tr>
+
+				<!--遍历-->
+				<foreach name="cartnum" item="cartlist">
+				<tr class="tr" class="carttr">
+				
+					<td class="tdcheckbox">
+						&nbsp;<input type="checkbox" name="items" value="<{$cartlist['id']}>" class="checkboxdel">
+					</td>
+						
+					
+					
+					<td id="details">
+						
+						
+						<img src="<{$cartlist['cartpic']}>" class="tdimg">
+						<div id="tda" style="color:#666666;font-size:12px;font-family: 微软雅黑; font-weight:700"><{$cartlist['gname']}></div>
+						<span id="details_update">
+							<span id="details_update_size" class="<{$cartlist['goodnumber']}>">
+								<span class="<{$cartlist['gcolor']}>">颜色：<{$cartlist['gcolor']}></span>
+								<br>
+								<span class="<{$cartlist['gsize']}>">尺寸：<{$cartlist['gsize']}></span>
+								<br>
+								
+								库存：
+								<span style="color:red" id="sadasdsa"><{$cartlist['goodnumber']}></span>
+							</span>
+							
+							<!--修改-->
+							<div class="cartsave_first">
+								<div class="cartsave_first_size">
+								</div>
+								<div class="cartsave">
+									<div class="cartsave_size" id="<{$cartlist['gid']}>">
+										修改
+									</div>
+								</div>
+
+							</div>
+							<div class="cartsave_first_upda">
+							    <div class="cartsave_first_upda_left">
+
+							    	<div class="cartsave_first_upda_left_wcolor">
+							    		<div class="cartsave_first_upda_left_wcolor_csize">
+							    			颜色&nbsp：
+							    		</div>
+							    		<div class="cartsave_first_upda_left_wcolor_color">
+							    			黑色
+							    		</div>
+							    	</div>
+							    	<div class="cartsave_first_upda_left_wsize">
+							    		<div class="cartsave_first_upda_left_wcolor_ssize">
+							    			 尺寸&nbsp：
+							    		</div>
+							    		<div class="cartsave_first_upda_left_wcolor_size">
+							    			L
+							    		</div>
+							    	</div>
+							    	<div class="cartsave_first_upda_left_bottom">
+							    		<div class="cartsave_first_upda_left_left" id="<{$cartlist['id']}>">
+							    			确认
+							    		</div>
+							    		<div class="cartsave_first_upda_left_right">
+							    			取消
+							    		</div>
+							    	</div>
+								</div>
+								<div class="cartsave_first_upda_right">
+									<img src="<{$cartlist['cartpic']}>" class="cartsave_first_upda_right_pic">
+								</div>
+							</div>
+
+
+						</span>
+					</td>
+					<td id="price">
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b id="price_1" style="color:#E20000;font-size:19px;"><span style="font-size:22px">￥</span><span class="gmoney"><{$cartlist['gmoney']}></span></b>
+						<br>
+						
+
+						<span style="display:block;width:131px;height:24px;line-height:24px;background:#FF6600;color:#fff;font-size:12px;">&nbsp;&nbsp;&nbsp;限时1.5折</span>
+						<span style="font-family:Arial;font-size:12px;display:block;width:131px;height:24px;background:#fff;color:#C7000B;" class="show_time"></span>
+						
+
+
+					</td>
+					<td>
+						&nbsp;&nbsp;<button class="number_subtract">-</button><span class="num_size"><{$cartlist['number']}></span><button class="number_add">+</button>
+					</td>
+						
+					<td>
+						&nbsp;&nbsp;&nbsp;&nbsp;<b class="totalprice"><{$cartlist['totalprice']}></b>
+					</td>
+					<td class="cart_del">
+						&nbsp;&nbsp;&nbsp;&nbsp;<a href="<{:U('Cart/cartdel')}>?id=<{$cartlist['id']}>" class="cartdel" id="<{$cartlist['id']}>">删除</a>
+					</td>
+
+				</tr>
+				
+				<tr  style="height:1px;">
+					<td style="background:#C6C6C6"></td>
+					<td style="background:#C6C6C6"></td>
+					<td style="background:#C6C6C6"></td>
+					<td style="background:#C6C6C6"></td>
+					<td style="background:#C6C6C6"></td>
+					<td style="background:#C6C6C6"></td>
+				</tr>
+			</foreach>
+			</table>
+			<span class="cartnumber"></span>
+		
+		</div>
+		<!-- ----------------- 购物车内容结束------------------------------>
+		
+		<!--  -------------------------- 购物结算框 ------------------------>
+
+		<div id="fixed">
+			<div id="fixed_del" style="position:relative">
+				&nbsp;&nbsp;
+				<a href="" class="checked_del">批量删除</a>
+			</div>		
+			<!--遍历条数-->
+
+
+			<div id="fixed_money">
+				<a href="<{:U("Cart/countersign")}>"><img src="__IMAGES__cart/icon13.png"></a>
+				<div class="fixed_premoney">￥</div>
+				<div class="fixed_bigmoney">0</div>
+				<div class="fixed_money_size">
+				</div>
+			</div>
+			
+			<table class="fixed_count">
+				<tr>
+					<td><span id="fixed_count_size">共</span></td>
+					<td><sapn class="fixed_count_nummber" style="font-weight:bold">0</span></td>
+					<td><span id="fixed_count_size">件</span></td>
+				</tr>
+			</table>
+			
+		</div>
+
+	<else />
+	<!-- ----------------- 未添加购物车状态------------------------------>	
+			<div id="num">
+				<div id="num_1">
+					购物车<span style ="color:#E01914;"></span>
+				</div>
+				<div id="num_2">
+					<img src="__IMAGES__cart/icon10.png">
+				</div>
+			
+		
+			</div>
+
+		<div class="nonecart">
+			<div class="nonecart_center">
+				<div class="nonecart_center_cterpic">
+					<!--小车-->
+					<div class="nonecart_center_cterpic_cart">
+					</div>
+					<!--小车结束-->
+
+					<!--提示字-->
+					<div class="nonecart_center_cterpic_size">
+						<div class="nonecart_center_cterpic_size_top">					
+								您的购物车还空着呢~
+						</div>
+						<div class="nonecart_center_cterpic_size_bottom">
+							<p><a href="<{:U('Login/login')}>">登录</a>可查看以前放入的商品</p>
+							<span><a href="<{:U('Goods/goodslist')}>">快去<em>商城</em>挑选心仪的宝贝吧~</a></span>
+						</div>
+					</div>
+					<!--提示字结束-->
+
+					<!--可变换的图片-->
+					<div class="nonecart_center_cterpic_conversion">
+
+					</div>
+					<!--可变换的图片结束-->
+				</div>
+			</div>	
+		</div>
+		<!-- ----------------- 未添加购物车状态结束------------------------------>	
+		</if>
+		
+		
+		
+		<!-- ----------------- 购物车推荐开始-------------------------------->
+		<div id="rcommend">
+			<div id="rcommend_1"><b>您可能还需要</b></div>
+			<div id="rcommend_2">
+				<a href=""><img src="__IMAGES__cart/400x400.jpg" class="img"></a>
+				<p></p>
+				<a href=""></a>
+				<a href=""><img src="__IMAGES__cart/500x500.jpg" class="img"></a>
+				<a href=""><img src="__IMAGES__cart/720x480.jpg" class="img"></a>
+				<a href=""><img src="__IMAGES__cart/720x480_004.jpg" class="img"></a>
+				<a href=""><img src="__IMAGES__cart/720x480_005.jpg" class="img"></a>
+				<a href=""><img src="__IMAGES__cart/800x800_003.jpg" class="img"></a>
+			</div>
+		</div>
+		<!-- ----------------- 购物车推荐结束---------------------------------->
+		
+		<!-- ----------------- 购物车尾部-------------------------------->
+		<include file="Public/blogroll" />
+		<include file="Public/footer" />
+	</body>
+	<script type="text/javascript"> 
+function countdown(){
+    var show_time = $(".show_time");
+    endtime = new Date("4/31/2015 00:00")//结束时间
+    today = new Date();//当前时间
+    delta_T = endtime.getTime() - today.getTime();//时间间隔
+    if(delta_T < 0){
+        show_time.innerHTML = "结束";
+    }
+    window.setTimeout(countdown,1000);
+    total_days = delta_T/(24*60*60*1000);//总天数
+    total_show = Math.floor(total_days);//实际显示的天数
+    total_hours = (total_days - total_show)*24;//剩余小时
+    hours_show = Math.floor(total_hours);//实际显示的小时数
+    total_minutes = (total_hours - hours_show)*60;//剩余的分钟数
+    minutes_show = Math.floor(total_minutes);//实际显示的分钟数
+    total_seconds = (total_minutes - minutes_show)*60;//剩余的分钟数
+    seconds_show = Math.floor(total_seconds);//实际显示的秒数
+    show_time.html("距放假还有:" + hours_show + ":" + minutes_show + ":" + seconds_show);
+}
+countdown();
+
+//获取购物车内商品数量
+var $cartnum_1 = $(".cartnum_1").children();
+$.post("cartajax",function(data){
+	$cartnum_1.html(eval(data));
+},'json');
+
+</script>
+
+</html>

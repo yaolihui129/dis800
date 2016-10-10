@@ -1,0 +1,121 @@
+<extend name="Public:menu" />
+<block name="user">
+	<link href="__CSS__information.css" rel="stylesheet" type="text/css">
+	<script src="__JS__jquery-1.8.3.js"></script>
+				<!--右边填写信息部分开始-->
+			<div class="body_right">
+				<div class="body_right_title">
+					<h2>基本资料</h2>
+				</div>
+				<!--选项卡部分-->
+				<div class="body_right_tab">
+					<div class="body_right_tab_menu">
+						<ul>
+							<li class="body_right_tab_menu_information"><a href="<{:U('User/information')}>">个人信息</a></li>
+							<li class="body_right_tab_menu_portrait"><a href="<{:U('User/portrait')}>">个人头像</a></li>
+						</ul>
+					</div>
+					<div class="body_right_tab_box">
+					<!--头像部分-->
+						<div class="body_right_tab_box_information">	
+							<div class="body_right_tab_box_information_pic">
+								<div class="body_right_tab_box_information_pic_inner">
+								<if condition="($length lt 1)">
+									<img src="__IMAGES__/user/user_default_logo_small.gif" width="70" height="70">
+								<else />
+									<img src="__PUBLIC__<{$pic}>" width="70" height="70">
+								</if>
+								</div>
+							</div>
+							<span>修改头像</sapn>
+						</div>
+
+					<!--头像部分结束-->
+						<div class="body_right_tab_box_information_right">
+							<pre>为了让更多志同道合的网友认识您，请填写昵称，昵称将会显示在团800、折800惠800等网站中，亲，一旦填写
+
+不能修改，填写后还能获得身份奖章和积分！</pre>
+						</div>
+						<!--表单部分-->
+						<form action="<{:U('User/doupdate')}>">
+						<div class="body_right_tab_box_information_user">
+							&nbsp;&nbsp;&nbsp;&nbsp;昵称：<input type="text" name="user" value="<{$Think.session.name}>" class="form_user">
+						
+							<input type="hidden" name="" value="<{$user['id']}>">
+						</div>
+						<div class="body_right_tab_box_information_user">
+							真实姓名：<input type="text" name="name" id="name" value="<{$user.name}>" class="form_user"><sub id="s_name">(必填)</sub>
+						</div>
+						<div class="body_right_tab_box_information_user">
+							手机号码：<input type="text" name="tel" id="tel" value="<{$user.tel}>" class="form_user">
+						</div>
+						<div class="body_right_tab_box_information_user">
+						&nbsp; QQ号码：<input type="text" name="qq" id="QQ" value="<{$user.qq}>" class="form_user">
+						</div>
+						<div class="body_right_tab_box_information_user">
+							 设置密保：<input type="text" name="issue" id="issue" value="<{$user.issue}>" class="form_user"><sub id="s_pwd">(必填,找回密码必备)</sub>
+						</div>
+				<!-- 		<div class="body_right_tab_box_information_user">
+							 密保回答：<input type="text" name="answer" id="issue" value="" class="form_user"><sub>(必填)</sub>
+						</div> -->
+						<div class="body_right_tab_box_information_user">
+						&nbsp;&nbsp;&nbsp; 邮箱：<input type="email" name="mail" id="email" value="<{$user.mail}>" class="form_user">
+						</div>
+						<div class="body_right_tab_box_information_sex">
+							性别：<input type="radio" name="sex" value="1" <{$user['sex']?'':'checked'}>>男&nbsp
+									<input type="radio" name="sex" value="0" <{$user['sex']?'checked':''}>>女
+						</div>
+						 　<div class="body_right_tab_box_information_birthday">
+							　　　　　生日：<select name="year">
+							<!--遍历年-->
+								<for start="1980" end="2038">
+										<option value="<{$i}>"><{$i}></option>
+								</for>
+								  </select>&nbsp年
+								  <select name="mouth">
+							<!--遍历月-->
+								  <for start="1" end="13">
+										<option value="<{$i}>"><{$i}></option>
+								</for>
+								  </select>&nbsp月
+								  <select name="day">
+							<!--遍历日-->
+								  	<for start="1" end ="32">
+										<option value="<{$i}>"><{$i}></option>
+									</for>
+								  </select>&nbsp日
+						</div>
+						<!-- <div class="body_right_tab_box_information_district">
+							所在地：<select name="district">
+										<option value=" ">1</option>
+								  	</select>&nbsp省
+								  	<select name="district">
+										<option value=" ">1</option>
+								  	</select>&nbsp市/区
+						</div> -->
+						<div class="body_right_tab_box_information_item">
+							　　　　　<input type="submit" value="保存" class="save"></input>
+						</div>
+						</form>
+						<!--表单部分结束-->
+			    	</div>
+			    </div>
+			</div>
+			<!--右边填写信息部分结束-->
+			<script>
+				$(".save").click(function(){
+					if($("#name").val()==''){
+						$("#s_name").css({'color':'red'});
+						return false;
+					}else{
+						$("#s_name").css({'color':'#666'});
+					}
+					if($("#issue").val()==''){
+						$("#s_pwd").css({'color':'red'});
+						return false;
+					}else{
+						$("#s_pwd").css({'color':'#666'});
+					}
+				})
+			</script>
+</block>
